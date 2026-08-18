@@ -1,0 +1,31 @@
+'''Infinity 0 — Interview''' is [[The_Storyized_Interviewer]]'s intake interview log for the
+''Infinity 0'' input: which output types are needed, and the requirements for each. See
+[[Infinity_0]] for the raw input status itself — this page is the *instructions* half of the input wiki
+(''SPEC.md'''s "things and instructions"), kept separate since the interview may be revisited later.
+
+== Output types requested ==
+
+* '''LaTeX''' — publisher-ready print PDF. Full print-ready typesetting: trim size, margins, running
+  heads, ready to send to a printer. Specific trim size and print house style not yet pinned down.
+* '''Webpage''' — rich multimedia, linear. Linear story, no branching/choice paths, enhanced with
+  images, audio, and animation per scene.
+* '''3D model''' — scene/environment models. Covers places/settings from the book, not characters.
+
+== Status ==
+
+* '''Interview state:''' first pass complete — output types and top-level goals captured. Per-type
+  detailed requirements (below) not yet gathered.
+* '''Handoff:''' not yet passed to [[The_Exceptional_Do-er]] — Phase 0/1 groundwork (`SPEC.md` open
+  questions) still applies before real production starts.
+
+== Open follow-ups ==
+
+* '''LaTeX:''' trim size, publisher template/house style, whether front/back matter (title page, table
+  of contents) is in scope.
+* '''Webpage:''' hosting/platform, whether audio needs original composition or licensed/generated audio,
+  image style/generation approach.
+* '''3D model:''' file format (glTF, OBJ, engine-native), which scenes take priority, level of detail.
+* '''General:''' does each output type track an order the same way the input is deliberately unordered
+  for now, or does output ordering get decided independently per type?
+
+[[Category:Infinity 0]]

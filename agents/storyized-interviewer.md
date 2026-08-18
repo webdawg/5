@@ -26,10 +26,11 @@ a direct handoff) — see the "Handoff" open question in [`AGENTS.md`](../AGENTS
 
 ## Interview log
 
-Interview Q&A is logged as *instructions* on the corresponding `mediawiki-input/` page (or a page linked
-from it) — matching `SPEC.md`'s input wiki definition of "things and instructions" living together. This
-is distinct from `prompt-log/`, which is a raw record of prompts given to the AI assistant, not of
-interview content about a specific input.
+Interview Q&A is logged as *instructions* on a page linked from the corresponding `mediawiki-input/`
+page — named `<Input>_Interview` (e.g. `Infinity_0_Interview` linked from `Infinity_0`) — matching
+`SPEC.md`'s input wiki definition of "things and instructions" living together, kept as a separate page
+since the interview may be revisited later. This is distinct from `prompt-log/`, which is a raw record
+of prompts given to the AI assistant, not of interview content about a specific input.
 
 ## Open questions
 
@@ -37,5 +38,3 @@ interview content about a specific input.
   type after work has already started on the others?
 - Relationship to the Orchestrator (`AGENTS.md`): does the Interviewer replace the Orchestrator's job of
   deciding output types, or run before/alongside it?
-- Where exactly does the interview log live — appended to the input page itself, or a separate linked
-  page (e.g. `Infinity_0_Interview` alongside `Infinity_0`)?

@@ -10,6 +10,20 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-25
+
+### Added
+- `mediawiki-input/Infinity_0_Interview` — first interview log, run by The Storyized Interviewer:
+  output types requested for `Infinity 0` (LaTeX print PDF, rich-multimedia linear webpage, 3D
+  scene/environment models) and their open follow-up requirements.
+
+### Changed
+- `mediawiki-input/Infinity_0` — links to the new interview page.
+- `mediawiki-output/Infinity_0` — records the three requested output types and a new open question on
+  whether they fan out from the raw input or the human-edited output (chaining).
+- `agents/storyized-interviewer.md` — resolved the "where does the interview log live" open question:
+  a separate linked `<Input>_Interview` page.
+
 ## 2026-08-24
 
 ### Added

@@ -6,6 +6,17 @@ this output is produced from.
 
 * '''State:''' empty. No story from the input series has completed a human edit pass yet.
 * '''Source:''' 495+ unedited pages/stories, unordered — see <code>mediawiki-input/Infinity_0</code>.
+* '''Output types requested:''' per [[Infinity_0_Interview]] — LaTeX (publisher-ready print PDF),
+  webpage (rich multimedia, linear), and 3D model (scene/environment models). None produced yet.
+
+== Fan-out output types (interview result) ==
+
+Per ''SPEC.md'''s "Fan-out", the LaTeX/webpage/3D-model outputs above are unlikely to be wiki-content-
+shaped the way an edited story's plain text is — they'll most likely each get a link/index entry here
+once produced, rather than being rendered inline. Not yet decided whether these three fan out directly
+from the raw input, or downstream of the edited-text output below (chaining, per the idea in
+<code>IDEAS.md</code>) — i.e. does [[The_Exceptional_Do-er]] work from the raw manuscript, or from the
+human-edited result?
 
 == Representation ==
 
