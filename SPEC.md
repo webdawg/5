@@ -7,7 +7,8 @@ roles that operate against this contract.
 
 A spec-driven architecture where the spec itself — along with everything derived from it — lives in
 git. The system has an input side and an output side. The primary motivator: turn every input into an
-output instantly.
+output instantly. One input can fan out to *multiple* outputs, each a different type — see "Fan-out"
+below.
 
 "Spec-driven agentic coding" means the spec is the source of truth an agent works from to go from input
 to output, rather than input being handled by ad hoc one-off logic per case.
@@ -46,6 +47,35 @@ become underscores, matching MediaWiki's own URL convention (page "Infinity 0" �
 These directories are plain git files, not a running wiki; importing them into a real MediaWiki instance
 is deliberately deferred — see `LATER.md`.
 
+## Fan-out: one input, multiple output types
+
+Per `INTENT.md`'s 2026-08-23 addendum: one input isn't limited to one output. It can fan out to several
+outputs, each a distinct *type*, all existing at once rather than as alternatives to pick between.
+Example: a book input could produce a LaTeX output (print typesetting), a webpage output (an interactive
+version of the story), and a 3D model output (scene settings) — three outputs, three types, one input.
+
+Each output type gets its own agent instance, with its own context window — not one agent carrying every
+output type's context for a given input. Per `AGENTS.md`, this means "Producer" is really one Producer
+per **(input, output type)** pair, not one Producer per input; see the Producer role and
+`agents/producer.md` for how that's captured.
+
+This also resolves the old "is there always exactly one input wiki and one output wiki" question below:
+there's one input wiki, but potentially many *kinds* of output, of which `mediawiki-output/` (rendered
+wiki content or a link) is just one type — not the whole output side.
+
+### Open questions (fan-out)
+
+- How is the set of output types for a given input decided — declared on the input itself, inferred by
+  an Orchestrator, or fixed globally by the spec?
+- Do all output types for one input share a single spec version, or can each type progress against its
+  own version independently?
+- Where does a given output type's own format contract live — one shared `SPEC.md`, or a per-type
+  sub-spec (the way `mediawiki-input/`/`mediawiki-output/`'s "Representation, for now" is effectively a
+  sub-spec for the wiki type)?
+- Do the different output-type agents for the same input ever need to share context (e.g. the LaTeX and
+  webpage outputs of the same book staying consistent with each other), or are they meant to be fully
+  independent by design?
+
 ## Open questions
 
 - What counts as an "input" and "output" concretely beyond the wiki case (files? structured records?)?
@@ -55,6 +85,5 @@ is deliberately deferred — see `LATER.md`.
 - When an output is a link rather than rendered content (the git-repo case), is the output-wiki *page*
   itself "the output" for traceability (`PRD.md` R8), or just an index — and does the linked external
   artifact need its own separate trace record?
-- Is there always exactly one input wiki and one output wiki, or could there be many of either?
 
 This doc will fill in further as those get answered.

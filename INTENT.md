@@ -81,3 +81,20 @@ repo in MediaWiki — so instead the output wiki has a link to it.
 So the input wiki, will have things and instructions, and the output wiki will have the rendered output
 or links to the outputs etc - like if the input is creating a git repo, we cant store that in mediawiki
 really, so we have a link to all the outputs
+
+### 2026-08-23 — One input, multiple outputs, each with its own agent and context window
+
+**Edited for readability:**
+
+A single input can fan out to multiple outputs, each a different type — not alternatives to pick
+between, but outputs that can all exist at once from the same input. For example, a book input could
+produce a LaTeX output for print typesetting, a webpage output for an interactive version of the story,
+and a 3D model output for scene settings. Each output type gets its own agent, with its own context
+window, rather than one agent holding the context for every output type at once.
+
+**Verbatim:**
+
+so for every input we may have multiple outputs, and we want an agent created for each output with its
+own context window - for instance - if we process a book input, it could have a latex output for
+typesetting for a published novel, a webpage output for a possible interactive story, a 3d model output
+for scene settings

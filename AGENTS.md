@@ -6,10 +6,13 @@ The multi-agent architecture for turning inputs into outputs against the shared 
 
 ## Roles
 
-- **Orchestrator** — watches `inputs/` for new/changed items, decides which are ready to process, and
-  dispatches each to a Producer. Owns sequencing and concurrency; doesn't do transformation work itself.
-- **Producer** — takes one input plus the current spec and generates the corresponding output. This is
-  where the actual "turn input into output" work happens.
+- **Orchestrator** — watches `inputs/` for new/changed items, decides which are ready to process and
+  which output type(s) each one needs, and dispatches one Producer per (input, output type) pair. Owns
+  sequencing and concurrency; doesn't do transformation work itself.
+- **Producer** — takes one input, one target output type, and the current spec, and generates that one
+  output. Per `SPEC.md`'s "Fan-out" section, one input can need several Producers — one per output type
+  (e.g. LaTeX, webpage, 3D model), each running in its own context window rather than one Producer
+  juggling every output type for an input.
 - **Validator** — checks a Producer's output against the spec before it's considered final (correctness,
   completeness, format). Rejects/bounces back to the Producer on mismatch rather than letting drift land
   in `outputs/`.
@@ -43,3 +46,6 @@ baked into this scaffolding.
   the Validator's check meaningful rather than the pipeline grading its own homework — does correctness
   need an external anchor (a real prior page state, a human-authored input) in that case, or does the
   spec itself have to be strict enough that it doesn't matter who authored the input?
+- Fan-out (`SPEC.md`): with one Producer per (input, output type) pair, does one Validator check all of
+  an input's outputs, or does each output type get its own Validator too — and does the Orchestrator
+  need to know an input is "done" only once every output type for it has passed validation?

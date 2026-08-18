@@ -10,6 +10,17 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-23
+
+### Changed
+- `INTENT.md` — new addendum: one input can fan out to multiple outputs of different types (e.g. a book
+  input producing LaTeX, webpage, and 3D-model outputs), each with its own agent and context window.
+- `SPEC.md` — new "Fan-out" section describing one-input-to-many-output-types, resolving the old "one
+  input wiki / one output wiki" cardinality open question; new fan-out-specific open questions added.
+- `AGENTS.md`, `agents/producer.md` — Producer redefined as scoped to one (input, output type) pair, not
+  one input; new open question on cross-output-type coordination and Validator scope under fan-out.
+- `ROADMAP.md` — Phase 1 now explicitly single-output-type only; Phase 2 gained a fan-out checklist item.
+
 ## 2026-08-22
 
 ### Added

@@ -19,7 +19,9 @@ Answer `SPEC.md`'s open questions before building against assumptions:
 ## Phase 1 — Single-agent pipeline
 
 One agent, manually triggered: read an input, read the spec, write the matching output. No
-Orchestrator/Producer/Validator split yet — proves the core loop before splitting it into roles.
+Orchestrator/Producer/Validator split yet, and one output type only — `SPEC.md`'s fan-out (one input,
+several output types, each its own agent/context window) is explicitly out of scope until Phase 2.
+Proves the core loop before splitting it into roles or types.
 
 First concrete target (`INTENT.md`'s 2026-08-18 addenda, `SPEC.md`'s "First concrete case"): two
 MediaWiki instances — an input wiki (things + instructions) and an output wiki (rendered output, or a
@@ -41,6 +43,9 @@ Introduce the `AGENTS.md` roles (Orchestrator, Producer, Validator) and answer i
 - [ ] Handoff mechanism between roles
 - [ ] Failure/retry behavior on Validator rejection
 - [ ] Traceability: input → spec version → output
+- [ ] Fan-out: one Producer per (input, output type), each its own context window (`SPEC.md`'s
+      "Fan-out" section) — how output types get decided per input, and whether sibling Producers for
+      the same input ever coordinate
 
 **Done when:** the three roles run as genuinely separate steps with a defined handoff, not one agent
 doing all three jobs inline.
