@@ -10,6 +10,7 @@ output instantly.
 
 ## Documentation map
 
+- [`PRD.md`](PRD.md) — product requirements: problem, goals, requirements, success criteria.
 - [`INTENT.md`](INTENT.md) — why this exists and why it's multi-agent.
 - [`SPEC.md`](SPEC.md) — the input/output contract and architecture, with open questions.
 - [`AGENTS.md`](AGENTS.md) — the multi-agent roles (Orchestrator, Producer, Validator) and how they hand

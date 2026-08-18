@@ -4,6 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Read these in order before making design decisions here — they must stay aligned:
 
+- [`PRD.md`](PRD.md) — the *what and for whom*: problem, goals, requirements, success criteria.
 - [`INTENT.md`](INTENT.md) — the *why*: the motivating problem and why it's multi-agent.
 - [`SPEC.md`](SPEC.md) — the *how*: the input/output contract and architecture, with open questions.
 - [`AGENTS.md`](AGENTS.md) — the *who*: the Orchestrator/Producer/Validator roles and their handoffs;
@@ -39,6 +40,6 @@ run) has been decided — check AGENTS.md's open questions first.
 
 ## Current status
 
-Scaffolding only: docs (`INTENT.md`, `SPEC.md`, `AGENTS.md`, `ROADMAP.md`, `CODEBOT.md`), role stubs
+Scaffolding only: docs (`PRD.md`, `INTENT.md`, `SPEC.md`, `AGENTS.md`, `ROADMAP.md`, `CODEBOT.md`), role stubs
 under `agents/`, empty `inputs/`/`outputs/`/`prompt-log/`. No code, no language/runtime chosen, no
 Phase 0 open question answered yet — see `ROADMAP.md`.
