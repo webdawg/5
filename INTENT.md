@@ -35,3 +35,11 @@ produced it.
   defined (see `SPEC.md`'s open questions).
 - Not building a generic multi-agent framework — the agent roles here are specific to the
   input-to-output pipeline, not a reusable product.
+
+## Capturing new intent
+
+When a raw elaboration of the idea comes in (new scope, a changed motivator, a constraint), append it
+here under a new `## Addenda` section as a dated entry, then pull anything concrete enough to act on
+into `SPEC.md` (the contract), `AGENTS.md` (the roles), or `ROADMAP.md` (noted for later). This file is
+the record of intent; the others are where it becomes actionable. See the raw material for this in
+[`prompt-log/`](prompt-log/) if the exact original wording matters.

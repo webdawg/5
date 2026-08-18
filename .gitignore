@@ -1,0 +1,22 @@
+# Dependencies / build output (language stack not yet decided — SPEC.md open questions)
+node_modules/
+dist/
+dist-ssr/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+target/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.sw?

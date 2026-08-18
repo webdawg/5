@@ -14,9 +14,12 @@ output instantly.
 - [`SPEC.md`](SPEC.md) — the input/output contract and architecture, with open questions.
 - [`AGENTS.md`](AGENTS.md) — the multi-agent roles (Orchestrator, Producer, Validator) and how they hand
   off work; per-role detail lives under [`agents/`](agents/).
+- [`ROADMAP.md`](ROADMAP.md) — phased plan, derived from the open questions in the docs above.
+- [`CODEBOT.md`](CODEBOT.md) — general principles for any agent generating code/output here.
 - [`CLAUDE.md`](CLAUDE.md) — guidance for working in this repo with Claude Code.
 
-`inputs/` and `outputs/` hold each side's data.
+`inputs/` and `outputs/` hold each side's data. [`prompt-log/`](prompt-log/) keeps a raw, verbatim record
+of prompts given to the assistant, separate from the curated docs above.
 
 ## License
 
