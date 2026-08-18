@@ -23,3 +23,6 @@ Not yet decided — see the "Handoff" and "Failure" open questions in [`AGENTS.m
 - Is validation fully automated, or does some class of output need human sign-off?
 - On rejection, does the same Producer retry, or does the Orchestrator re-dispatch fresh?
 - How many retries before an input is considered failed rather than retried indefinitely?
+- Narrative review (`mediawiki-input/Infinity_0_Interview`): the 3D output's scene-breakdown decisions
+  need a check that the breakdown makes narrative sense, not just a format/completeness check. Is that
+  within this role's job, or a distinct review step outside Validator as currently scoped?

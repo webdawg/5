@@ -17,10 +17,14 @@
 * '''3D model''' — scene/environment models. Covers places/settings from the book, not characters.
 ** '''Tech stack:''' TypeScript + WebGL, rendered client-side in a modern browser. Same hosting
    constraint as the webpage output — no server, just static asset hosting.
-** '''Scene generation:''' not per-story or per-scene prioritized. When input processing starts, the
-   entire input is taken as a whole and used to create a scene from it. (Whether that means one single
-   overarching scene for the whole book, or a repeatable process invoked later over sub-units, isn't
-   settled yet — see open follow-ups.)
+** '''Scene granularity:''' dynamic, not fixed to one scene per book or one scene per fixed unit. As
+   many scenes get generated as the given input unit actually needs — a chapter might yield several
+   scenes, a paragraph might yield one. The unit of input handed to a given generation run (chapter,
+   paragraph, whatever) drives how many scenes come out of it, not a pre-set ratio.
+** '''Narrative review:''' every scene-breakdown decision (how a given input unit got split into scenes)
+   must go through a narrative review before being treated as final — not just a technical/format check,
+   but a check that the breakdown makes narrative sense. Relationship to the Validator role (`AGENTS.md`)
+   not yet decided — see open follow-ups.
 ** '''Fidelity:''' concept-level blockout — fast, rough massing/layout, not final-quality.
 
 == Cross-cutting technical constraint ==
@@ -37,16 +41,16 @@ needed — none of them are required to wait for or mirror an eventual order on 
 
 == Status ==
 
-* '''Interview state:''' third pass complete — LaTeX front/back matter and house style, and the general
-  ordering question, are now settled. Remaining open items are narrower implementation details, not
-  open requirements decisions.
+* '''Interview state:''' fourth pass complete — LaTeX front/back matter and house style, the general
+  ordering question, and 3D scene granularity are now settled. Remaining open items are narrower
+  implementation details, not open requirements decisions.
 * '''Handoff:''' not yet passed to [[The_Exceptional_Do-er]] — Phase 0/1 groundwork (`SPEC.md` open
   questions) still applies before real production starts.
 
 == Open follow-ups ==
 
-* '''3D model:''' does "take the entire input and create a scene" mean one single scene for the whole
-  book, or something that runs repeatedly as the input grows/changes? File format within the WebGL stack
-  (e.g. glTF) not yet pinned down either.
+* '''3D model:''' file format within the WebGL stack (e.g. glTF) not yet pinned down. Who/what performs
+  the narrative review — a human, the Validator role (`AGENTS.md`), or a dedicated narrative-review
+  agent — is also not yet decided.
 
 [[Category:Infinity 0]]

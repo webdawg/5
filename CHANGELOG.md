@@ -10,6 +10,15 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-28
+
+### Changed
+- `mediawiki-input/Infinity_0_Interview` — fourth interview pass: 3D scene granularity is dynamic (as
+  many scenes as a given input unit needs, not a fixed ratio), and every scene-breakdown decision
+  requires a narrative review before being final.
+- `agents/validator.md` — new open question on whether narrative review belongs to the Validator role
+  or is a distinct review step.
+
 ## 2026-08-27
 
 ### Changed
