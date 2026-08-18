@@ -61,7 +61,7 @@ Scaffolding only: docs (`PRD.md`, `INTENT.md`, `SPEC.md`, `AGENTS.md`, `ROADMAP.
 validator; named book-input pipeline: `storyized-interviewer.md`, `exceptional-doer.md`, and the
 stateful `narrative-reviewer/` subfolder with its own `memory/`), one illustrative example under
 `examples/`, `mediawiki-input/`/`mediawiki-output/` with the first real input (`Infinity_0`, fully
-interviewed — see `Infinity_0_Interview`) and its still-empty output counterpart, `core-inputs/input-book/`
-scaffolded but with no real story folders yet (the corpus hasn't been split into named stories), empty
-`inputs/`/`outputs/`/`prompt-log/`. No code, no language/runtime chosen, no Phase 0 open question
-answered yet — see `ROADMAP.md`.
+interviewed — see `Infinity_0_Interview`), a renamed series index (`Infinity_0_Series`, since the first
+story shares the book's own title), `core-inputs/input-book/` scaffolded but with no real story folders
+yet (the corpus hasn't been split into named stories), empty `inputs/`/`outputs/`/`prompt-log/`. No code,
+no language/runtime chosen, no Phase 0 open question answered yet — see `ROADMAP.md`.

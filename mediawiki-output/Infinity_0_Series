@@ -1,6 +1,7 @@
-'''Infinity 0''' (output) indexes the finished, human-edited stories from the ''Infinity 0'' input
+'''Infinity 0 Series''' (output) indexes the finished, human-edited stories from the ''Infinity 0'' input
 series. See the input page for the source-side sub-specification: raw, unedited manuscript pages/stories
-this output is produced from.
+this output is produced from. Renamed from ''Infinity 0'' to free that title up for the first story
+itself, [[Infinity_0]] — the story and the series share a name, so the series page needed to move.
 
 == Status ==
 
@@ -26,8 +27,8 @@ from ''SPEC.md'''s "First concrete case", not the link case. As individual stori
 pass, each one becomes its own output page here, filename as the story's title (spaces as underscores,
 per the same convention as the input side).
 
-This page itself is not a story — it's the index/placeholder for the series until real per-story output
-pages exist.
+This page itself is not a story — it's the index/placeholder for the series. First story landed:
+[[Infinity_0]].
 
 == Open questions ==
 

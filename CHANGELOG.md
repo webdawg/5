@@ -10,6 +10,13 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-31
+
+### Changed
+- `mediawiki-output/Infinity_0` renamed to `mediawiki-output/Infinity_0_Series` — the first story being
+  written shares the book's own title ("Infinity 0"), colliding with the series index page's filename.
+  The index moved so `mediawiki-output/Infinity_0` is free for the actual story.
+
 ## 2026-08-30
 
 ### Added
