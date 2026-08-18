@@ -14,6 +14,9 @@ Read these in order before making design decisions here — they must stay align
 - [`IDEAS.md`](IDEAS.md) — a low-ceremony backlog of ideas not yet vetted or promoted into the docs
   above. Lighter weight than `INTENT.md`'s addenda — capture ideas here first if they're not yet clearly
   founding intent.
+- [`LATER.md`](LATER.md) — concretely-scoped work that's deliberately deferred. Different from
+  `IDEAS.md` (unproven ideas) and `ROADMAP.md` (sequenced next steps) — this is decided work, just not
+  time for it yet.
 - [`CODEBOT.md`](CODEBOT.md) — the *how to write it*: code generation principles, distinct from all of
   the above.
 - [`CHANGELOG.md`](CHANGELOG.md) — dated record of notable spec/doc changes. Update it alongside any
@@ -33,6 +36,9 @@ automatically, without being asked each time — then do whatever was actually a
 
 - `inputs/` — arriving things that need to become an output.
 - `outputs/` — what gets produced from an input.
+- `mediawiki-input/`, `mediawiki-output/` — the first concrete input/output case (`SPEC.md`), one file
+  per MediaWiki page, filename as the literal page title. Plain git files for now — see `LATER.md` for
+  the deferred real-instance import.
 - `agents/` — one doc per agent role (`orchestrator.md`, `producer.md`, `validator.md`).
 - `prompt-log/` — raw, verbatim history of prompts given to the AI assistant on this project, separate
   from the curated docs above. See `prompt-log/README.md` for format and cadence — a live instance of
@@ -48,6 +54,7 @@ run) has been decided — check AGENTS.md's open questions first.
 ## Current status
 
 Scaffolding only: docs (`PRD.md`, `INTENT.md`, `SPEC.md`, `AGENTS.md`, `ROADMAP.md`, `IDEAS.md`,
-`CODEBOT.md`, `CHANGELOG.md`), role stubs under `agents/`, one illustrative example under `examples/`,
-empty `inputs/`/`outputs/`/`prompt-log/`. No code, no language/runtime chosen, no Phase 0 open question
+`LATER.md`, `CODEBOT.md`, `CHANGELOG.md`), role stubs under `agents/`, one illustrative example under
+`examples/`, `mediawiki-input/`/`mediawiki-output/` (empty except a README so far), empty
+`inputs/`/`outputs/`/`prompt-log/`. No code, no language/runtime chosen, no Phase 0 open question
 answered yet — see `ROADMAP.md`.

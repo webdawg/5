@@ -10,6 +10,21 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-19
+
+### Added
+- `mediawiki-input/`, `mediawiki-output/` — first concrete case made real: one file per MediaWiki page,
+  filename as the literal page title. Currently just plain git files.
+- `LATER.md` — concretely-scoped, deliberately-deferred work, distinct from `IDEAS.md` and `ROADMAP.md`.
+  Primed with the first entry: importing `mediawiki-input/`/`mediawiki-output/` into real running
+  MediaWiki instances.
+
+### Changed
+- `SPEC.md` — "First concrete case" now names `mediawiki-input/`/`mediawiki-output/` directly and
+  states the file-per-page/filename-as-title representation; `Layout` updated to list them.
+- `ROADMAP.md` — Phase 1 now points at `mediawiki-input/`/`mediawiki-output/` as the working
+  representation, with the real-instance import deferred to `LATER.md`.
+
 ## 2026-08-18
 
 ### Added

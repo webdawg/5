@@ -16,26 +16,33 @@ to output, rather than input being handled by ad hoc one-off logic per case.
 
 - `inputs/` — things that arrive and need to become an output.
 - `outputs/` — what gets produced from an input.
+- `mediawiki-input/`, `mediawiki-output/` — the first concrete case (below), as flat files in git.
 - `SPEC.md` (this file) — the shared contract both sides work from.
 
-These folders are the generic, git-native representation of the input/output side of the system. The
-first concrete case (below) materializes that same input/output split as two external MediaWiki
-instances instead — the folders and the wikis are two representations of the same abstract split, not
-competing designs.
+`inputs/`/`outputs/` are the generic, git-native representation of the input/output side of the system.
+`mediawiki-input/`/`mediawiki-output/` materialize that same split for the first concrete case — two
+representations of the same abstract split, not competing designs.
 
 ## First concrete case: input wiki / output wiki
 
 Per `INTENT.md`'s 2026-08-18 addenda:
 
-- **Input wiki** — holds *things* (raw material/data) and *instructions* (what should happen to them).
-  This is the input side: what an Orchestrator watches for new/changed content on.
-- **Output wiki** — holds either the rendered result directly, when the output is representable as wiki
-  content, **or** a link to the output when it isn't. Example: an input instructing "create a git repo"
-  can't be stored *in* MediaWiki — the output wiki instead gets a page linking to the created repo.
+- **Input wiki** (`mediawiki-input/`) — holds *things* (raw material/data) and *instructions* (what
+  should happen to them). This is the input side: what an Orchestrator watches for new/changed content
+  on.
+- **Output wiki** (`mediawiki-output/`) — holds either the rendered result directly, when the output is
+  representable as wiki content, **or** a link to the output when it isn't. Example: an input
+  instructing "create a git repo" can't be stored *in* MediaWiki — the output wiki instead gets a page
+  linking to the created repo.
 
 This means "the output" is sometimes the artifact itself (rendered wiki content) and sometimes an index
 entry pointing at an artifact that lives elsewhere entirely. Both count as valid outputs; which one
 applies depends on whether the result fits as wiki content.
+
+**Representation, for now:** each file in `mediawiki-input/`/`mediawiki-output/` is one MediaWiki page,
+in wikitext. The filename *is* the page title, exactly — no extension, no slugging. These directories
+are plain git files, not a running wiki; importing them into a real MediaWiki instance is deliberately
+deferred — see `LATER.md`.
 
 ## Open questions
 
