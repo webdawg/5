@@ -17,10 +17,12 @@ output instantly.
   off work; per-role detail lives under [`agents/`](agents/).
 - [`ROADMAP.md`](ROADMAP.md) — phased plan, derived from the open questions in the docs above.
 - [`CODEBOT.md`](CODEBOT.md) — general principles for any agent generating code/output here.
+- [`CHANGELOG.md`](CHANGELOG.md) — dated record of notable spec/doc changes.
 - [`CLAUDE.md`](CLAUDE.md) — guidance for working in this repo with Claude Code.
 
-`inputs/` and `outputs/` hold each side's data. [`prompt-log/`](prompt-log/) keeps a raw, verbatim record
-of prompts given to the assistant, separate from the curated docs above.
+`inputs/` and `outputs/` hold each side's data. [`examples/`](examples/) has a hand-authored, illustrative
+input→output walkthrough — concrete, since the real format is still open (`SPEC.md`). [`prompt-log/`](prompt-log/)
+keeps a raw, verbatim record of prompts given to the assistant, separate from the curated docs above.
 
 ## License
 

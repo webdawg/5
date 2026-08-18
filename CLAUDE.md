@@ -13,6 +13,8 @@ Read these in order before making design decisions here — they must stay align
   Check it at the start of a session before starting new work.
 - [`CODEBOT.md`](CODEBOT.md) — the *how to write it*: code generation principles, distinct from all of
   the above.
+- [`CHANGELOG.md`](CHANGELOG.md) — dated record of notable spec/doc changes. Update it alongside any
+  change to `PRD.md`/`INTENT.md`/`SPEC.md`/`AGENTS.md`, same change, not an afterthought.
 
 This project is early-stage; treat these docs as the source of truth to update as decisions get made,
 not as a fixed design.
@@ -32,6 +34,8 @@ automatically, without being asked each time — then do whatever was actually a
 - `prompt-log/` — raw, verbatim history of prompts given to the AI assistant on this project, separate
   from the curated docs above. See `prompt-log/README.md` for format and cadence — a live instance of
   this project's own input/output pattern, not just process hygiene.
+- `examples/` — a hand-authored, illustrative (non-binding) input→output walkthrough. See
+  `examples/README.md` — do not treat this as the real input/output format.
 
 `inputs/` and `outputs/` are currently empty scaffolding (`.gitkeep` only) — no input/output format,
 storage convention, or processing pipeline has been decided yet. Don't assume a schema; check SPEC.md's
@@ -40,6 +44,7 @@ run) has been decided — check AGENTS.md's open questions first.
 
 ## Current status
 
-Scaffolding only: docs (`PRD.md`, `INTENT.md`, `SPEC.md`, `AGENTS.md`, `ROADMAP.md`, `CODEBOT.md`), role stubs
-under `agents/`, empty `inputs/`/`outputs/`/`prompt-log/`. No code, no language/runtime chosen, no
-Phase 0 open question answered yet — see `ROADMAP.md`.
+Scaffolding only: docs (`PRD.md`, `INTENT.md`, `SPEC.md`, `AGENTS.md`, `ROADMAP.md`, `CODEBOT.md`,
+`CHANGELOG.md`), role stubs under `agents/`, one illustrative example under `examples/`, empty
+`inputs/`/`outputs/`/`prompt-log/`. No code, no language/runtime chosen, no Phase 0 open question
+answered yet — see `ROADMAP.md`.
