@@ -55,7 +55,9 @@ run) has been decided — check AGENTS.md's open questions first.
 
 Scaffolding only: docs (`PRD.md`, `INTENT.md`, `SPEC.md`, `AGENTS.md`, `ROADMAP.md`, `IDEAS.md`,
 `LATER.md`, `CODEBOT.md`, `CHANGELOG.md`), role stubs under `agents/` (generic: orchestrator, producer,
-validator; named book-input pipeline: `storyized-interviewer.md`, `exceptional-doer.md`), one
-illustrative example under `examples/`, `mediawiki-input/`/`mediawiki-output/` with the first real input
-(`Infinity_0`) and its still-empty output counterpart, empty `inputs/`/`outputs/`/`prompt-log/`. No code,
-no language/runtime chosen, no Phase 0 open question answered yet — see `ROADMAP.md`.
+validator; named book-input pipeline: `storyized-interviewer.md`, `exceptional-doer.md`, and the
+stateful `narrative-reviewer/` subfolder with its own `memory/`), one illustrative example under
+`examples/`, `mediawiki-input/`/`mediawiki-output/` with the first real input (`Infinity_0`, fully
+interviewed — see `Infinity_0_Interview`) and its still-empty output counterpart, empty
+`inputs/`/`outputs/`/`prompt-log/`. No code, no language/runtime chosen, no Phase 0 open question
+answered yet — see `ROADMAP.md`.

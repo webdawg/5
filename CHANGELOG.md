@@ -10,6 +10,22 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-29
+
+### Added
+- `agents/narrative-reviewer/README.md`, `agents/narrative-reviewer/memory/README.md` — The Narrative
+  Reviewer: a stateful, trainable agent (unlike every other agent here) that reviews 3D scene-breakdown
+  decisions for narrative sense, alongside full human review, not instead of it. Given its own subfolder
+  since it accumulates memory over time rather than being a stateless role description.
+
+### Changed
+- `INTENT.md` — new addendum naming and motivating this stateful-agent pattern.
+- `AGENTS.md` — registered The Narrative Reviewer as a third named book-input-pipeline agent.
+- `agents/validator.md` — narrative-review open question answered: a dedicated agent, not this role.
+- `mediawiki-input/Infinity_0_Interview` — fifth and (for now) final pass: 3D tech stack settled as
+  Three.js (matching repo 3's precedent) with glTF assets; narrative review assigned to The Narrative
+  Reviewer. Every requirement raised so far is now resolved.
+
 ## 2026-08-28
 
 ### Changed

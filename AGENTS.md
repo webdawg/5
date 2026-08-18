@@ -31,6 +31,11 @@ starts. Two named agents cover that pipeline:
   `agents/storyized-interviewer.md`.
 - **The Exceptional Do-er** — takes the Interviewer's completed input + requirements record and produces
   every output type it identified. See `agents/exceptional-doer.md`.
+- **The Narrative Reviewer** — reviews scene-breakdown decisions (currently: for the 3D output) for
+  narrative sense, alongside full human review, not in place of it. Unlike every other agent here, it's
+  **stateful**: it accumulates memory about the user and past decisions and gets trained directly, which
+  is why it lives in its own subfolder, `agents/narrative-reviewer/`, with a `memory/` of its own, rather
+  than a single file like the other roles. See `agents/narrative-reviewer/README.md`.
 
 Their relationship to Orchestrator/Producer/Validator above isn't decided yet — see each one's own open
 questions. Treat them as the concrete, named agents for the book-input pipeline first, and fold that
@@ -42,6 +47,8 @@ back into the generic roles once it's clear whether they're the same thing or ge
   responsibilities, inputs it consumes, outputs it produces, and how it hands off to the next role.
 - `agents/storyized-interviewer.md`, `agents/exceptional-doer.md` — the named book-input pipeline agents,
   same template.
+- `agents/narrative-reviewer/` — the one stateful named agent, as a subfolder rather than a single file:
+  `README.md` for its role definition, `memory/` for what it accumulates over time.
 
 No runtime/framework choice has been made yet (e.g. whether these are separate Claude Code agent
 invocations, separate processes, or something else) — that's an open question below, not a decision

@@ -15,16 +15,21 @@
 ** '''Audio:''' AI-generated.
 ** '''Images:''' AI-generated illustrations.
 * '''3D model''' — scene/environment models. Covers places/settings from the book, not characters.
-** '''Tech stack:''' TypeScript + WebGL, rendered client-side in a modern browser. Same hosting
-   constraint as the webpage output — no server, just static asset hosting.
+** '''Tech stack:''' TypeScript + Three.js (WebGL), rendered client-side in a modern browser — same
+   library convention as the Three.js simulation built in repo 3 (also TypeScript, no build step, no
+   server). Same static-hosting constraint as the webpage output.
+** '''Asset format:''' glTF for the scene model files — Three.js's own loader is built around it, and
+   repo 3 has no exported-model precedent to override it with (it renders procedural geometry, not
+   loaded files).
 ** '''Scene granularity:''' dynamic, not fixed to one scene per book or one scene per fixed unit. As
    many scenes get generated as the given input unit actually needs — a chapter might yield several
    scenes, a paragraph might yield one. The unit of input handed to a given generation run (chapter,
    paragraph, whatever) drives how many scenes come out of it, not a pre-set ratio.
 ** '''Narrative review:''' every scene-breakdown decision (how a given input unit got split into scenes)
    must go through a narrative review before being treated as final — not just a technical/format check,
-   but a check that the breakdown makes narrative sense. Relationship to the Validator role (`AGENTS.md`)
-   not yet decided — see open follow-ups.
+   but a check that the breakdown makes narrative sense. Performed by a dedicated, stateful agent, '''The
+   Narrative Reviewer''' (`agents/narrative-reviewer/`) — not the Validator role. Full human review still
+   happens alongside it, not instead of it; the user intends to train this agent directly over time.
 ** '''Fidelity:''' concept-level blockout — fast, rough massing/layout, not final-quality.
 
 == Cross-cutting technical constraint ==
@@ -41,16 +46,14 @@ needed — none of them are required to wait for or mirror an eventual order on 
 
 == Status ==
 
-* '''Interview state:''' fourth pass complete — LaTeX front/back matter and house style, the general
-  ordering question, and 3D scene granularity are now settled. Remaining open items are narrower
-  implementation details, not open requirements decisions.
+* '''Interview state:''' fifth pass complete — every requirement raised so far is settled: output types,
+  LaTeX spec, webpage spec, 3D tech stack/asset format/granularity/narrative review, and ordering.
 * '''Handoff:''' not yet passed to [[The_Exceptional_Do-er]] — Phase 0/1 groundwork (`SPEC.md` open
   questions) still applies before real production starts.
 
 == Open follow-ups ==
 
-* '''3D model:''' file format within the WebGL stack (e.g. glTF) not yet pinned down. Who/what performs
-  the narrative review — a human, the Validator role (`AGENTS.md`), or a dedicated narrative-review
-  agent — is also not yet decided.
+Nothing outstanding from this interview right now. Revisit if new requirements surface (per
+`agents/storyized-interviewer.md`'s open question on whether an interview can be reopened later).
 
 [[Category:Infinity 0]]

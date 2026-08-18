@@ -115,3 +115,16 @@ log my inputs, and ask me what outputs we need here - lets create an agent calle
 Interviewr" - it is there job to collect all the inputs, and all the reqirements for the ouputs, and
 pass it off to the next Agent who is the "The Exceptional Do-er" - lets get these agents defined now in
 the repo
+
+### 2026-08-29 — A stateful, trainable agent: The Narrative Reviewer
+
+**Edited for readability:**
+
+Narrative review needs a dedicated agent, with its own subfolder, that remembers the user and past
+decisions over time — not a stateless role invoked fresh each run like the others. The user intends to
+train it directly. Full human review still happens alongside it, not instead of it.
+
+**Verbatim:**
+
+A dedicated narrative-review agent with its own agent subfolder - it remembers me and things and stuff -
+we still go through a full human review together, but I am going to train it
