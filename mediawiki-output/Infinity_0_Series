@@ -1,11 +1,12 @@
-'''Infinity 0 Series''' (output) indexes the finished, human-edited stories from the ''Infinity 0'' input
-series. See the input page for the source-side sub-specification: raw, unedited manuscript pages/stories
-this output is produced from. Renamed from ''Infinity 0'' to free that title up for the first story
-itself, [[Infinity_0]] — the story and the series share a name, so the series page needed to move.
+'''Infinity 0 Series''' (output) indexes the finished, human-edited stories and front matter from the
+''Infinity 0'' input series. See the input page for the source-side sub-specification: raw, unedited
+manuscript pages/stories this output is produced from. Renamed from ''Infinity 0'' to free that title up
+for the book's title page, [[Infinity_0]] — the title page and the series share a name, so the series
+page needed to move.
 
 == Status ==
 
-* '''State:''' empty. No story from the input series has completed a human edit pass yet.
+* '''State:''' title page landed ([[Infinity_0]]). No story has completed a human edit pass yet.
 * '''Source:''' 495+ unedited pages/stories, unordered — see <code>mediawiki-input/Infinity_0</code>.
 * '''Output types requested:''' per [[Infinity_0_Interview]] — LaTeX (publisher-ready print PDF, 5.5"
   x 8.5" trim), a static webpage (rich multimedia, linear, AI-generated audio/images), and a 3D model
@@ -27,8 +28,9 @@ from ''SPEC.md'''s "First concrete case", not the link case. As individual stori
 pass, each one becomes its own output page here, filename as the story's title (spaces as underscores,
 per the same convention as the input side).
 
-This page itself is not a story — it's the index/placeholder for the series. First story landed:
-[[Infinity_0]].
+This page itself is not a story — it's the index/placeholder for the series. Front matter and stories
+share this same per-page convention: [[Infinity_0]] is the title page (front matter, not a story) —
+title '''Infinity 0''', author '''Agent 0'''.
 
 == Open questions ==
 

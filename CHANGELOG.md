@@ -10,6 +10,16 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-09-01
+
+### Added
+- `mediawiki-output/Infinity_0` — the first real output content: the book's title page (front matter),
+  title "Infinity 0", author "Agent 0".
+
+### Changed
+- `mediawiki-output/Infinity_0_Series` — corrected: the page freed up by the earlier rename was for the
+  title page (front matter), not a story; updated wording and status accordingly.
+
 ## 2026-08-31
 
 ### Changed
