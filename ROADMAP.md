@@ -27,8 +27,8 @@ link when the real output isn't wiki-content-shaped, e.g. a created git repo). C
 not decided yet as *the* format — Phase 0's input/output questions still apply to it like anything else.
 
 For now, represented as plain files in git: `mediawiki-input/` and `mediawiki-output/`, one file per
-page, filename as the literal page title. Importing into real running MediaWiki instances is deferred —
-see `LATER.md`.
+page, filename as the page title with spaces as underscores. Importing into real running MediaWiki
+instances is deferred — see `LATER.md`.
 
 **Done when:** a human can drop a file in `inputs/` and get a spec-correct file in `outputs/` after
 manually invoking the agent once.

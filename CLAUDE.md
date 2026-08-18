@@ -37,8 +37,8 @@ automatically, without being asked each time — then do whatever was actually a
 - `inputs/` — arriving things that need to become an output.
 - `outputs/` — what gets produced from an input.
 - `mediawiki-input/`, `mediawiki-output/` — the first concrete input/output case (`SPEC.md`), one file
-  per MediaWiki page, filename as the literal page title. Plain git files for now — see `LATER.md` for
-  the deferred real-instance import.
+  per MediaWiki page, filename as the page title with spaces as underscores. Plain git files for now —
+  see `LATER.md` for the deferred real-instance import.
 - `agents/` — one doc per agent role (`orchestrator.md`, `producer.md`, `validator.md`).
 - `prompt-log/` — raw, verbatim history of prompts given to the AI assistant on this project, separate
   from the curated docs above. See `prompt-log/README.md` for format and cadence — a live instance of

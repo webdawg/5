@@ -13,16 +13,22 @@ Nothing pending.
 ## 2026-08-20
 
 ### Added
-- `mediawiki-input/Infinity 0` — first real input page: a sub-specification for the ''Infinity 0''
+- `mediawiki-input/Infinity_0` — first real input page: a sub-specification for the ''Infinity 0''
   scifi book series (495+ unedited pages/stories). Establishes a human-in-the-loop pattern where inputs
   arrive as the outputs of human edits, and stories are deliberately unordered for now, with ordering
   subject to change over time.
+
+### Changed
+- `SPEC.md`, `mediawiki-input/README.md`, `mediawiki-output/README.md`, `ROADMAP.md`, `CLAUDE.md`,
+  `LATER.md` — clarified the filename-as-page-title convention: spaces become underscores, matching
+  MediaWiki's own URL convention. Renamed `mediawiki-input/Infinity 0` → `mediawiki-input/Infinity_0`
+  to match.
 
 ## 2026-08-19
 
 ### Added
 - `mediawiki-input/`, `mediawiki-output/` — first concrete case made real: one file per MediaWiki page,
-  filename as the literal page title. Currently just plain git files.
+  filename as the page title with spaces as underscores. Currently just plain git files.
 - `LATER.md` — concretely-scoped, deliberately-deferred work, distinct from `IDEAS.md` and `ROADMAP.md`.
   Primed with the first entry: importing `mediawiki-input/`/`mediawiki-output/` into real running
   MediaWiki instances.
