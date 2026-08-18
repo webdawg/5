@@ -10,6 +10,16 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-26
+
+### Changed
+- `mediawiki-input/Infinity_0_Interview` — second interview pass: LaTeX trim size (5.5"x8.5"), webpage
+  hosting (static, e.g. GitHub Pages)/audio (AI-generated)/images (AI-generated), and 3D model tech
+  stack (TypeScript + WebGL, static-hosted, no server), scene-generation approach (whole input in, one
+  scene out — granularity not yet settled), and fidelity (concept-level blockout). New "Cross-cutting
+  technical constraint" section: webpage and 3D outputs are both static-only, no backend server.
+- `mediawiki-output/Infinity_0` — status line updated to match the fuller requirements.
+
 ## 2026-08-25
 
 ### Added
