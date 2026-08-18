@@ -128,3 +128,19 @@ train it directly. Full human review still happens alongside it, not instead of 
 
 A dedicated narrative-review agent with its own agent subfolder - it remembers me and things and stuff -
 we still go through a full human review together, but I am going to train it
+
+### 2026-08-30 — Book input structure: core-inputs/input-book/, ordered by folder number and a priority file
+
+**Edited for readability:**
+
+Book inputs get a dedicated directory structure: `core-inputs/input-book/`, one folder per story, named
+`<N>-<Story_Name>` where `N` is the order and `Story_Name` uses underscores for spaces. The real,
+authoritative ordering mechanism is a `priority.txt` file inside each story's folder, containing a
+number — not the folder name itself.
+
+**Verbatim:**
+
+so you will have book inputs lets create a core-inputs/input-book/0-#### spec structure for this book -
+the numbers will be the order - the stuff after the - will be the name - the name will have underscores
+- our system of ordering with be a priority text file inside of the last sub folder that will have a
+number for priority

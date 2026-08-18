@@ -25,9 +25,11 @@ output instantly.
 `inputs/` and `outputs/` hold each side's data. [`mediawiki-input/`](mediawiki-input/) and
 [`mediawiki-output/`](mediawiki-output/) are the first concrete case (`SPEC.md`) — one file per MediaWiki
 page, filename as the page title; importing them into real MediaWiki instances is deferred, see
-`LATER.md`. [`examples/`](examples/) has a hand-authored, illustrative input→output walkthrough —
-concrete, since the real format is still open (`SPEC.md`). [`prompt-log/`](prompt-log/) keeps a raw,
-verbatim record of prompts given to the assistant, separate from the curated docs above.
+`LATER.md`. [`core-inputs/`](core-inputs/) is the second concrete case — raw source content by input
+type (e.g. `core-inputs/input-book/`), for material too large to be a single wiki page.
+[`examples/`](examples/) has a hand-authored, illustrative input→output walkthrough — concrete, since
+the real format is still open (`SPEC.md`). [`prompt-log/`](prompt-log/) keeps a raw, verbatim record of
+prompts given to the assistant, separate from the curated docs above.
 
 ## License
 

@@ -10,6 +10,21 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-30
+
+### Added
+- `core-inputs/README.md`, `core-inputs/input-book/README.md` — the second concrete input case: raw
+  source content by input type, for material too large to be a single wiki page. Book inputs get one
+  folder per story (`<N>-<Story_Title>/`), with `priority.txt` (a single integer) as the authoritative
+  order — not the folder-name number — and `manuscript.txt` for the raw text. No real story folders yet.
+
+### Changed
+- `INTENT.md` — new addendum capturing this structure and its ordering mechanism.
+- `SPEC.md` — new "Second concrete case" section; `Layout` updated to list `core-inputs/`.
+- `mediawiki-input/Infinity_0` — links to `core-inputs/input-book/` for the raw text; "Granularity" and
+  "Ordering mechanism" open questions resolved.
+- `README.md`, `CLAUDE.md` — registered `core-inputs/` alongside the other top-level directories.
+
 ## 2026-08-29
 
 ### Added

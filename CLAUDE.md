@@ -39,6 +39,9 @@ automatically, without being asked each time — then do whatever was actually a
 - `mediawiki-input/`, `mediawiki-output/` — the first concrete input/output case (`SPEC.md`), one file
   per MediaWiki page, filename as the page title with spaces as underscores. Plain git files for now —
   see `LATER.md` for the deferred real-instance import.
+- `core-inputs/` — the second concrete case (`SPEC.md`): raw source content by input type, for material
+  too large/unstructured to be one wiki page (e.g. `core-inputs/input-book/`, one folder per story, with
+  a `priority.txt` as the authoritative order). See `core-inputs/README.md`.
 - `agents/` — one doc per agent role (`orchestrator.md`, `producer.md`, `validator.md`).
 - `prompt-log/` — raw, verbatim history of prompts given to the AI assistant on this project, separate
   from the curated docs above. See `prompt-log/README.md` for format and cadence — a live instance of
@@ -58,6 +61,7 @@ Scaffolding only: docs (`PRD.md`, `INTENT.md`, `SPEC.md`, `AGENTS.md`, `ROADMAP.
 validator; named book-input pipeline: `storyized-interviewer.md`, `exceptional-doer.md`, and the
 stateful `narrative-reviewer/` subfolder with its own `memory/`), one illustrative example under
 `examples/`, `mediawiki-input/`/`mediawiki-output/` with the first real input (`Infinity_0`, fully
-interviewed — see `Infinity_0_Interview`) and its still-empty output counterpart, empty
+interviewed — see `Infinity_0_Interview`) and its still-empty output counterpart, `core-inputs/input-book/`
+scaffolded but with no real story folders yet (the corpus hasn't been split into named stories), empty
 `inputs/`/`outputs/`/`prompt-log/`. No code, no language/runtime chosen, no Phase 0 open question
 answered yet — see `ROADMAP.md`.

@@ -18,11 +18,14 @@ to output, rather than input being handled by ad hoc one-off logic per case.
 - `inputs/` — things that arrive and need to become an output.
 - `outputs/` — what gets produced from an input.
 - `mediawiki-input/`, `mediawiki-output/` — the first concrete case (below), as flat files in git.
+- `core-inputs/` — raw source content by input type (below), e.g. `core-inputs/input-book/`.
 - `SPEC.md` (this file) — the shared contract both sides work from.
 
 `inputs/`/`outputs/` are the generic, git-native representation of the input/output side of the system.
-`mediawiki-input/`/`mediawiki-output/` materialize that same split for the first concrete case — two
-representations of the same abstract split, not competing designs.
+`mediawiki-input/`/`mediawiki-output/` materialize that same split for the first concrete case. Where a
+`mediawiki-input/` page's content isn't itself wiki-content-shaped (e.g. a whole book manuscript),
+`core-inputs/` holds the actual raw material and the wiki page points at it — representations of the
+same abstract split, not competing designs.
 
 ## First concrete case: input wiki / output wiki
 
@@ -46,6 +49,27 @@ that lives inside those two directories. The filename *is* the page title, no ex
 become underscores, matching MediaWiki's own URL convention (page "Infinity 0" → file `Infinity_0`).
 These directories are plain git files, not a running wiki; importing them into a real MediaWiki instance
 is deliberately deferred — see `LATER.md`.
+
+## Second concrete case: book input structure (`core-inputs/input-book/`)
+
+Per `INTENT.md`'s 2026-08-30 addendum. `mediawiki-input/Infinity_0` is the status/instructions page for
+the `Infinity 0` book input, but a 495+-page manuscript isn't itself wiki-content-shaped as a single
+page — so the raw text lives in `core-inputs/input-book/` instead, one folder per story:
+
+```
+core-inputs/input-book/<N>-<Story_Title>/
+├── priority.txt   — a single integer; the authoritative order (not the folder-name number)
+└── manuscript.txt — the raw, unedited story text
+```
+
+- The folder-name number (`N`) is a rough, human-sortable display hint, not the source of truth.
+- `priority.txt` is authoritative. Reordering a story means editing that file, not renaming the folder
+  — so reordering never breaks anything that references the folder by name. If the two ever disagree,
+  `priority.txt` wins.
+- Story titles use underscores for spaces, matching `mediawiki-input/`'s filename convention.
+
+See `core-inputs/README.md` and `core-inputs/input-book/README.md`. This also answers
+`mediawiki-input/Infinity_0`'s open "granularity" question: one folder per story.
 
 ## Fan-out: one input, multiple output types
 
