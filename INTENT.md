@@ -98,3 +98,20 @@ so for every input we may have multiple outputs, and we want an agent created fo
 own context window - for instance - if we process a book input, it could have a latex output for
 typesetting for a published novel, a webpage output for a possible interactive story, a 3d model output
 for scene settings
+
+### 2026-08-24 — Naming the first two book-input agents: The Storyized Interviewer and The Exceptional Do-er
+
+**Edited for readability:**
+
+To start the first book input, we need an interview spec: an agent that logs inputs and asks what
+outputs are needed. That agent is "The Storyized Interviewer" — its job is to collect all the inputs and
+all the requirements for the outputs, then hand that off to the next agent, "The Exceptional Do-er,"
+which does the actual work.
+
+**Verbatim:**
+
+Okay, so lets start our first book input - we need to create an interview spec for this - you need to
+log my inputs, and ask me what outputs we need here - lets create an agent called "The Storyized
+Interviewr" - it is there job to collect all the inputs, and all the reqirements for the ouputs, and
+pass it off to the next Agent who is the "The Exceptional Do-er" - lets get these agents defined now in
+the repo

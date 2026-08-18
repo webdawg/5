@@ -20,10 +20,28 @@ The multi-agent architecture for turning inputs into outputs against the shared 
 Three roles, not more, until real usage shows a gap — see the open questions below before adding a
 fourth.
 
+## Named agents: the book-input pipeline
+
+The first real usage (the `Infinity 0` book input) surfaced exactly that gap: nothing above covers
+*collecting* an input and interviewing the human for its output requirements before any Producer work
+starts. Two named agents cover that pipeline:
+
+- **The Storyized Interviewer** — runs the intake interview: collects the input, and asks the human
+  which output types (`SPEC.md`'s "Fan-out") are needed and what each one requires. See
+  `agents/storyized-interviewer.md`.
+- **The Exceptional Do-er** — takes the Interviewer's completed input + requirements record and produces
+  every output type it identified. See `agents/exceptional-doer.md`.
+
+Their relationship to Orchestrator/Producer/Validator above isn't decided yet — see each one's own open
+questions. Treat them as the concrete, named agents for the book-input pipeline first, and fold that
+back into the generic roles once it's clear whether they're the same thing or genuinely distinct.
+
 ## Scaffolding
 
-- `agents/orchestrator.md`, `agents/producer.md`, `agents/validator.md` — one doc per role: its
+- `agents/orchestrator.md`, `agents/producer.md`, `agents/validator.md` — one doc per generic role: its
   responsibilities, inputs it consumes, outputs it produces, and how it hands off to the next role.
+- `agents/storyized-interviewer.md`, `agents/exceptional-doer.md` — the named book-input pipeline agents,
+  same template.
 
 No runtime/framework choice has been made yet (e.g. whether these are separate Claude Code agent
 invocations, separate processes, or something else) — that's an open question below, not a decision

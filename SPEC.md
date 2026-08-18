@@ -66,7 +66,8 @@ wiki content or a link) is just one type — not the whole output side.
 ### Open questions (fan-out)
 
 - How is the set of output types for a given input decided — declared on the input itself, inferred by
-  an Orchestrator, or fixed globally by the spec?
+  an Orchestrator, or fixed globally by the spec? First answer, for the book-input pipeline: interview
+  the human. See **The Storyized Interviewer** in `AGENTS.md`/`agents/storyized-interviewer.md`.
 - Do all output types for one input share a single spec version, or can each type progress against its
   own version independently?
 - Where does a given output type's own format contract live — one shared `SPEC.md`, or a per-type

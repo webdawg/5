@@ -10,6 +10,21 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-24
+
+### Added
+- `agents/storyized-interviewer.md` — The Storyized Interviewer: runs the intake interview for a new
+  input, collecting the input and asking the human which output types are needed and what each requires.
+- `agents/exceptional-doer.md` — The Exceptional Do-er: takes the Interviewer's completed input +
+  requirements record and produces every output type it identified.
+
+### Changed
+- `INTENT.md` — new addendum naming these two agents for the first book-input pipeline.
+- `AGENTS.md` — new "Named agents: the book-input pipeline" section; relationship to the generic
+  Orchestrator/Producer/Validator roles left as an open question per-agent rather than forced now.
+- `SPEC.md` — fan-out open question "how output types get decided" now has a first answer: The Storyized
+  Interviewer asks the human directly.
+
 ## 2026-08-23
 
 ### Changed
