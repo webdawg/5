@@ -1,0 +1,7 @@
+'''mediawiki-input''' is the input wiki, per ''SPEC.md'''s "First concrete case" — things and
+instructions.
+
+Every file here is one MediaWiki page, written in MediaWiki wikitext — never Markdown, including this
+page. The filename ''is'' the page title, no extension, spaces as underscores, matching MediaWiki's own
+URL convention (page "Infinity 0" → file <code>Infinity_0</code>). These are plain files in git for now,
+not a running wiki — importing them into a real MediaWiki instance is deferred, see ''LATER.md''.

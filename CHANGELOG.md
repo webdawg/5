@@ -10,6 +10,18 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-21
+
+### Fixed
+- `mediawiki-input/README.md` and `mediawiki-output/README.md` were Markdown, breaking the "every file
+  in these directories is a MediaWiki page" rule. Renamed to `README` (no extension) and rewritten in
+  wikitext.
+
+### Changed
+- `SPEC.md` — "Representation, for now" now says explicitly: MediaWiki wikitext only in
+  `mediawiki-input/`/`mediawiki-output/`, never Markdown, no exceptions, including README/documentation
+  files.
+
 ## 2026-08-20
 
 ### Added

@@ -40,10 +40,11 @@ entry pointing at an artifact that lives elsewhere entirely. Both count as valid
 applies depends on whether the result fits as wiki content.
 
 **Representation, for now:** each file in `mediawiki-input/`/`mediawiki-output/` is one MediaWiki page,
-in wikitext. The filename *is* the page title, no extension — except spaces become underscores, matching
-MediaWiki's own URL convention (page "Infinity 0" → file `Infinity_0`). These directories are plain git
-files, not a running wiki; importing them into a real MediaWiki instance is deliberately deferred — see
-`LATER.md`.
+in MediaWiki wikitext syntax — never Markdown, no exceptions, including any README/documentation file
+that lives inside those two directories. The filename *is* the page title, no extension — except spaces
+become underscores, matching MediaWiki's own URL convention (page "Infinity 0" → file `Infinity_0`).
+These directories are plain git files, not a running wiki; importing them into a real MediaWiki instance
+is deliberately deferred — see `LATER.md`.
 
 ## Open questions
 
