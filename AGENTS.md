@@ -38,3 +38,8 @@ baked into this scaffolding.
   state that needs coordination?
 - Traceability: how is "this output came from this input, this spec version, this agent run" recorded
   (git commit metadata, a log file, something else)?
+- Self-validation: `INTENT.md`'s 2026-08-18 addendum means AI can control both the input and the output
+  side (e.g. an AI-authored MediaWiki edit as the input). If AI can also produce the input, what keeps
+  the Validator's check meaningful rather than the pipeline grading its own homework — does correctness
+  need an external anchor (a real prior page state, a human-authored input) in that case, or does the
+  spec itself have to be strict enough that it doesn't matter who authored the input?

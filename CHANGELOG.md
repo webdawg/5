@@ -22,3 +22,12 @@ Nothing pending.
 - `.gitignore`.
 - Initial scaffold: `README.md`, `LICENSE` (AGPL-3.0-or-later), `INTENT.md`, `SPEC.md`, `AGENTS.md`,
   `CLAUDE.md`, `agents/` role stubs, empty `inputs/`/`outputs/`.
+
+### Changed
+- `INTENT.md` — new addendum: AI can control both the input and output sides, not just one; a
+  MediaWiki instance is the first concrete input/output target; physical-resource access (and raising
+  real instances against it) is explicitly deferred to later.
+- `ROADMAP.md` — Phase 1 now names MediaWiki as its first concrete target; added Phase 5 (physical
+  resources), deliberately least-defined and not actionable yet.
+- `AGENTS.md` — new open question: if AI can author both the input and the output, what keeps Validator
+  checks meaningful rather than the pipeline grading its own homework.

@@ -21,6 +21,10 @@ Answer `SPEC.md`'s open questions before building against assumptions:
 One agent, manually triggered: read an input, read the spec, write the matching output. No
 Orchestrator/Producer/Validator split yet — proves the core loop before splitting it into roles.
 
+First concrete target (`INTENT.md`'s 2026-08-18 addendum): a MediaWiki instance as both the input and
+output surface — reading pages as inputs, writing pages back out as outputs. Chosen as the first case,
+not decided yet as *the* format — Phase 0's input/output questions still apply to it like anything else.
+
 **Done when:** a human can drop a file in `inputs/` and get a spec-correct file in `outputs/` after
 manually invoking the agent once.
 
@@ -50,3 +54,14 @@ against an older version.
 
 **Done when:** two inputs can be processed at the same time without one's Producer/Validator run
 interfering with the other's, and it's possible to tell which spec version produced any given output.
+
+## Phase 5 — Physical resources
+
+The least-defined phase, kept visible so earlier architecture doesn't foreclose it rather than because
+it's actionable now. Per `INTENT.md`'s 2026-08-18 addendum: once physical resources are made available,
+the pipeline extends beyond software instances (like Phase 1's MediaWiki) to raising and operating real
+instances against physical resources. Explicitly deferred by the person providing that access — nothing
+here is itemized beyond the idea itself, and it shouldn't be built toward until that access actually
+exists.
+
+**Done when:** revisit and re-scope once physical resource access is actually available — not before.

@@ -43,3 +43,27 @@ here under a new `## Addenda` section as a dated entry, then pull anything concr
 into `SPEC.md` (the contract), `AGENTS.md` (the roles), or `ROADMAP.md` (noted for later). This file is
 the record of intent; the others are where it becomes actionable. See the raw material for this in
 [`prompt-log/`](prompt-log/) if the exact original wording matters.
+
+## Addenda
+
+Later elaborations on the founding intent above, each captured a lightly-edited version first, then the
+original raw text verbatim below it.
+
+### 2026-08-18 — AI-controlled input/output, and MediaWiki as the first instance
+
+**Edited for readability:**
+
+Both the input and the output can be controlled by AI — not just a human dropping something in on one
+side and reading it out the other. One of the first concrete pieces we're going to implement is an
+input-and-output MediaWiki instance.
+
+Later, further into the project, physical resources will eventually become available, and we'll raise
+real instances at that point — but that's not a concern right now. Right now the goal is just to define
+the why and the intent around this.
+
+**Verbatim:**
+
+AI can control both the input and output, and one of the first pieces we are going to implement is an
+input, and output mediawiki instance - Later in the thick of things I will eventually provide access to
+physical resources - we will raise these instances at this point, but we are not worried about doing
+that right now, we just want to define the why, and the intent around this stuff
