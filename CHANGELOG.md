@@ -10,6 +10,13 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-22
+
+### Added
+- `mediawiki-output/Infinity_0` — output-side counterpart to `mediawiki-input/Infinity_0`: currently
+  empty (no story has an edited output yet), documents that edited stories are rendered content (not
+  links), and carries over the input side's open questions on ordering, traceability, and re-editing.
+
 ## 2026-08-21
 
 ### Fixed

@@ -1,0 +1,30 @@
+'''Infinity 0''' (output) indexes the finished, human-edited stories from the ''Infinity 0'' input
+series. See the input page for the source-side sub-specification: raw, unedited manuscript pages/stories
+this output is produced from.
+
+== Status ==
+
+* '''State:''' empty. No story from the input series has completed a human edit pass yet.
+* '''Source:''' 495+ unedited pages/stories, unordered — see <code>mediawiki-input/Infinity_0</code>.
+
+== Representation ==
+
+An edited story is plain text, so it fits as wiki content directly — this is the "rendered result" case
+from ''SPEC.md'''s "First concrete case", not the link case. As individual stories complete a human edit
+pass, each one becomes its own output page here, filename as the story's title (spaces as underscores,
+per the same convention as the input side).
+
+This page itself is not a story — it's the index/placeholder for the series until real per-story output
+pages exist.
+
+== Open questions ==
+
+* '''Ordering''' — the input side is deliberately unordered for now; does that carry over here, or does
+  edited/output content get an order assigned that the raw input never had?
+* '''Traceability''' — each per-story output page should trace back to which input page and which human
+  edit pass produced it (<code>PRD.md</code> R8). Not yet decided how that link is recorded — on the
+  output page itself, or elsewhere.
+* '''Re-editing''' — if a story gets a second human edit pass later, does that replace this page's
+  content, or does history need to be kept somewhere?
+
+[[Category:Infinity 0]]
