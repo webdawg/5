@@ -31,3 +31,10 @@ Nothing pending.
   resources), deliberately least-defined and not actionable yet.
 - `AGENTS.md` — new open question: if AI can author both the input and the output, what keeps Validator
   checks meaningful rather than the pipeline grading its own homework.
+- `INTENT.md` — second addendum: the input wiki holds things + instructions; the output wiki holds
+  rendered output or, when the real output isn't wiki-content-shaped (e.g. a created git repo), a link
+  to it instead.
+- `SPEC.md` — Core idea reworded from "two sides, each with its own inputs/outputs" to "an input side
+  and an output side," matching the clarified shape; new "First concrete case" section describing the
+  input wiki / output wiki split; new open questions on output-as-link traceability and wiki cardinality.
+- `ROADMAP.md` — Phase 1's target reworded from one MediaWiki instance to two (input wiki, output wiki).

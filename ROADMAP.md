@@ -21,8 +21,9 @@ Answer `SPEC.md`'s open questions before building against assumptions:
 One agent, manually triggered: read an input, read the spec, write the matching output. No
 Orchestrator/Producer/Validator split yet — proves the core loop before splitting it into roles.
 
-First concrete target (`INTENT.md`'s 2026-08-18 addendum): a MediaWiki instance as both the input and
-output surface — reading pages as inputs, writing pages back out as outputs. Chosen as the first case,
+First concrete target (`INTENT.md`'s 2026-08-18 addenda, `SPEC.md`'s "First concrete case"): two
+MediaWiki instances — an input wiki (things + instructions) and an output wiki (rendered output, or a
+link when the real output isn't wiki-content-shaped, e.g. a created git repo). Chosen as the first case,
 not decided yet as *the* format — Phase 0's input/output questions still apply to it like anything else.
 
 **Done when:** a human can drop a file in `inputs/` and get a spec-correct file in `outputs/` after

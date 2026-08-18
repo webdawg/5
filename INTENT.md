@@ -67,3 +67,17 @@ AI can control both the input and output, and one of the first pieces we are goi
 input, and output mediawiki instance - Later in the thick of things I will eventually provide access to
 physical resources - we will raise these instances at this point, but we are not worried about doing
 that right now, we just want to define the why, and the intent around this stuff
+
+### 2026-08-18 — Input wiki vs. output wiki: things+instructions vs. rendered output or links
+
+**Edited for readability:**
+
+The input wiki will hold things and instructions. The output wiki will hold the rendered output, or
+links to the output, etc. For example: if the input is "create a git repo," we can't really store a git
+repo in MediaWiki — so instead the output wiki has a link to it.
+
+**Verbatim:**
+
+So the input wiki, will have things and instructions, and the output wiki will have the rendered output
+or links to the outputs etc - like if the input is creating a git repo, we cant store that in mediawiki
+really, so we have a link to all the outputs
