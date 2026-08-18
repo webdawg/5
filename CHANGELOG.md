@@ -38,3 +38,8 @@ Nothing pending.
   and an output side," matching the clarified shape; new "First concrete case" section describing the
   input wiki / output wiki split; new open questions on output-as-link traceability and wiki cardinality.
 - `ROADMAP.md` — Phase 1's target reworded from one MediaWiki instance to two (input wiki, output wiki).
+
+### Added
+- `IDEAS.md` — low-ceremony backlog of ideas not yet vetted into the curated docs, primed with the
+  first idea: chaining wiki instances (one's output wiki as another's input wiki) for multi-stage
+  agentic production, not yet promoted to `ROADMAP.md`.

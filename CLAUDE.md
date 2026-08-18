@@ -11,6 +11,9 @@ Read these in order before making design decisions here — they must stay align
   per-role detail in `agents/`.
 - [`ROADMAP.md`](ROADMAP.md) — the *what's next*: phased plan derived from the open questions above.
   Check it at the start of a session before starting new work.
+- [`IDEAS.md`](IDEAS.md) — a low-ceremony backlog of ideas not yet vetted or promoted into the docs
+  above. Lighter weight than `INTENT.md`'s addenda — capture ideas here first if they're not yet clearly
+  founding intent.
 - [`CODEBOT.md`](CODEBOT.md) — the *how to write it*: code generation principles, distinct from all of
   the above.
 - [`CHANGELOG.md`](CHANGELOG.md) — dated record of notable spec/doc changes. Update it alongside any
@@ -44,7 +47,7 @@ run) has been decided — check AGENTS.md's open questions first.
 
 ## Current status
 
-Scaffolding only: docs (`PRD.md`, `INTENT.md`, `SPEC.md`, `AGENTS.md`, `ROADMAP.md`, `CODEBOT.md`,
-`CHANGELOG.md`), role stubs under `agents/`, one illustrative example under `examples/`, empty
-`inputs/`/`outputs/`/`prompt-log/`. No code, no language/runtime chosen, no Phase 0 open question
+Scaffolding only: docs (`PRD.md`, `INTENT.md`, `SPEC.md`, `AGENTS.md`, `ROADMAP.md`, `IDEAS.md`,
+`CODEBOT.md`, `CHANGELOG.md`), role stubs under `agents/`, one illustrative example under `examples/`,
+empty `inputs/`/`outputs/`/`prompt-log/`. No code, no language/runtime chosen, no Phase 0 open question
 answered yet — see `ROADMAP.md`.

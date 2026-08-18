@@ -16,6 +16,7 @@ output instantly.
 - [`AGENTS.md`](AGENTS.md) — the multi-agent roles (Orchestrator, Producer, Validator) and how they hand
   off work; per-role detail lives under [`agents/`](agents/).
 - [`ROADMAP.md`](ROADMAP.md) — phased plan, derived from the open questions in the docs above.
+- [`IDEAS.md`](IDEAS.md) — low-ceremony backlog of ideas not yet vetted or promoted into the docs above.
 - [`CODEBOT.md`](CODEBOT.md) — general principles for any agent generating code/output here.
 - [`CHANGELOG.md`](CHANGELOG.md) — dated record of notable spec/doc changes.
 - [`CLAUDE.md`](CLAUDE.md) — guidance for working in this repo with Claude Code.
