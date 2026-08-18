@@ -1,0 +1,37 @@
+'''Infinity 0''' is the input series for a science fiction book about physics and the universe: 495+
+pages, currently unedited, written before this project existed.
+
+== Status ==
+
+* '''State:''' unedited raw draft.
+* '''Volume:''' 495+ pages / stories, uncounted precisely — expect this number to be approximate and
+  growing.
+* '''Ordering:''' unordered for now. The stories don't have a fixed sequence yet, and the sequence may
+  change over time as more is understood about how they relate. Don't assume story N comes before story
+  N+1 just because of filename or import order.
+
+== Pipeline for this input series ==
+
+This series follows a human-in-the-loop pattern, distinct from an agent going straight from raw input to
+finished output:
+
+* The '''input''' is a raw, unedited page or story, as originally written.
+* A '''human edit''' pass — not an agent — produces the polished version.
+* The edited result is the '''output''' of that pass. Per the wiki-chaining idea in <code>IDEAS.md</code>,
+  that output can itself become a new input for whatever downstream processing happens next, rather than
+  being a dead end.
+
+In short: for ''Infinity 0'', inputs arrive as the outputs of human edits, not as agent-produced content
+being validated by a human. The human is upstream of the agent here, not downstream.
+
+== Open questions ==
+
+* '''Granularity''' — is one input page here one manuscript page, one story, or one chapter? Not yet
+  decided; may vary story to story.
+* '''Ordering mechanism''' — when/if an order does get assigned, does it live on these input pages, on
+  the corresponding output pages, or somewhere else entirely?
+* '''Edit trigger''' — what starts a human edit pass on a given raw page (manual pick, oldest-first,
+  something else), and who performs it?
+* '''Completion''' — what marks a given story as "done" — one human edit pass, or several?
+
+[[Category:Infinity 0]]

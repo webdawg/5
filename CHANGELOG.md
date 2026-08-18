@@ -10,6 +10,14 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-20
+
+### Added
+- `mediawiki-input/Infinity 0` — first real input page: a sub-specification for the ''Infinity 0''
+  scifi book series (495+ unedited pages/stories). Establishes a human-in-the-loop pattern where inputs
+  arrive as the outputs of human edits, and stories are deliberately unordered for now, with ordering
+  subject to change over time.
+
 ## 2026-08-19
 
 ### Added
