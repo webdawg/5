@@ -10,6 +10,15 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-08-27
+
+### Changed
+- `mediawiki-input/Infinity_0_Interview` — third interview pass: LaTeX front/back matter (full: title
+  page, table of contents, copyright page) and house style (generic professional novel layout); new
+  "Ordering" section resolving the general open question — each output type orders independently of the
+  input's unordered state. Remaining open items narrowed to 3D scene granularity and WebGL asset format.
+- `mediawiki-output/Infinity_0` — Ordering open question marked resolved, same answer.
+
 ## 2026-08-26
 
 ### Changed

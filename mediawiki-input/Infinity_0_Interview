@@ -6,8 +6,9 @@
 == Output types requested ==
 
 * '''LaTeX''' — publisher-ready print PDF. Full print-ready typesetting: trim size '''5.5" x 8.5"'''
-  (trade paperback), margins, running heads, ready to send to a printer. Publisher template/house style
-  and front/back matter scope still not pinned down.
+  (trade paperback), margins, running heads, ready to send to a printer.
+** '''Front/back matter:''' full — title page, table of contents, copyright page, not just story text.
+** '''House style:''' generic professional novel layout, not tied to a specific publisher's style guide.
 * '''Webpage''' — rich multimedia, linear. Linear story, no branching/choice paths, enhanced with
   images, audio, and animation per scene.
 ** '''Hosting:''' static site (e.g. GitHub Pages) — no server, static assets only.
@@ -28,21 +29,24 @@ Both the '''webpage''' and '''3D model''' outputs are static-only, browser-rende
 backend server for either. Both need to be servable from plain static asset hosting. This is a shared
 constraint across those two output types, not just a per-type detail.
 
+== Ordering ==
+
+Per `SPEC.md`'s open questions and `Infinity_0`'s own unordered-for-now state: '''each output type
+orders independently'''. LaTeX, webpage, and 3D scenes each settle on their own order/structure as
+needed — none of them are required to wait for or mirror an eventual order on the input side.
+
 == Status ==
 
-* '''Interview state:''' second pass complete — LaTeX trim size, webpage hosting/audio/images, and 3D
-  tech stack/scene-generation approach/fidelity all captured.
+* '''Interview state:''' third pass complete — LaTeX front/back matter and house style, and the general
+  ordering question, are now settled. Remaining open items are narrower implementation details, not
+  open requirements decisions.
 * '''Handoff:''' not yet passed to [[The_Exceptional_Do-er]] — Phase 0/1 groundwork (`SPEC.md` open
   questions) still applies before real production starts.
 
 == Open follow-ups ==
 
-* '''LaTeX:''' publisher template/house style, whether front/back matter (title page, table of contents)
-  is in scope.
 * '''3D model:''' does "take the entire input and create a scene" mean one single scene for the whole
   book, or something that runs repeatedly as the input grows/changes? File format within the WebGL stack
   (e.g. glTF) not yet pinned down either.
-* '''General:''' does each output type track an order the same way the input is deliberately unordered
-  for now, or does output ordering get decided independently per type?
 
 [[Category:Infinity 0]]

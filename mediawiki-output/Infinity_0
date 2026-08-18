@@ -31,8 +31,8 @@ pages exist.
 
 == Open questions ==
 
-* '''Ordering''' — the input side is deliberately unordered for now; does that carry over here, or does
-  edited/output content get an order assigned that the raw input never had?
+* '''Ordering''' — '''resolved''' per [[Infinity_0_Interview]]: each output type orders independently.
+  It doesn't have to wait for or mirror an eventual order on the input side.
 * '''Traceability''' — each per-story output page should trace back to which input page and which human
   edit pass produced it (<code>PRD.md</code> R8). Not yet decided how that link is recorded — on the
   output page itself, or elsewhere.
