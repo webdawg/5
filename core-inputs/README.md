@@ -3,7 +3,8 @@
 The raw, "core" side of an input: actual raw source content, organized by input type. Distinct from
 `mediawiki-input/`'s wiki-representation layer (things + instructions, per `SPEC.md`) and the generic,
 still-unused `inputs/` scaffold — a `mediawiki-input/` page points here for the real material; this
-directory holds the material itself.
+directory holds the material itself. Its output-side counterpart is `core-outputs/` — what gets produced
+from this material (generation code/scripts plus the rendered result) lives there, not here.
 
 ## Layout
 

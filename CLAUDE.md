@@ -42,6 +42,9 @@ automatically, without being asked each time — then do whatever was actually a
 - `core-inputs/` — the second concrete case (`SPEC.md`): raw source content by input type, for material
   too large/unstructured to be one wiki page (e.g. `core-inputs/input-book/`, one folder per story, with
   a `priority.txt` as the authoritative order). See `core-inputs/README.md`.
+- `core-outputs/` — `core-inputs/`'s output-side counterpart: generation code/scripts plus the rendered
+  result, one folder per piece, matching `core-inputs/input-book/`'s folder names 1:1 (e.g.
+  `core-outputs/output-book/`). See `core-outputs/README.md`.
 - `agents/` — one doc per agent role (`orchestrator.md`, `producer.md`, `validator.md`).
 - `prompt-log/` — raw, verbatim history of prompts given to the AI assistant on this project, separate
   from the curated docs above. See `prompt-log/README.md` for format and cadence — a live instance of
@@ -62,6 +65,10 @@ validator; named book-input pipeline: `storyized-interviewer.md`, `exceptional-d
 stateful `narrative-reviewer/` subfolder with its own `memory/`), one illustrative example under
 `examples/`, `mediawiki-input/`/`mediawiki-output/` with the first real input (`Infinity_0`, fully
 interviewed — see `Infinity_0_Interview`), a renamed series index (`Infinity_0_Series`, since the first
-story shares the book's own title), `core-inputs/input-book/` scaffolded but with no real story folders
-yet (the corpus hasn't been split into named stories), empty `inputs/`/`outputs/`/`prompt-log/`. No code,
-no language/runtime chosen, no Phase 0 open question answered yet — see `ROADMAP.md`.
+story shares the book's own title), `core-inputs/input-book/` with no real story folders yet (the corpus
+hasn't been split into named stories) but a settled title page design brief
+(`0-Title_Page/design-brief.md`, produced via a Creation Interview — a second interview pattern, alongside
+`The Storyized Interviewer`, for content with no raw draft to interview about; see `IDEAS.md`), plus its
+`core-outputs/output-book/0-Title_Page/` counterpart reserved for the eventual generation code and
+render, empty `inputs/`/`outputs/`. No code, no language/runtime chosen, no Phase 0 open question
+answered yet — see `ROADMAP.md`.

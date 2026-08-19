@@ -42,17 +42,22 @@ while actually building the title page next (reusing `prompt-log/`'s existing ra
 then distill the recurring question/decision pattern out of that trace into a new
 `agents/creation-interviewer.md` role doc, mirroring `storyized-interviewer.md`'s structure.
 
+Running the title page through this for real turned up a **three-stage flow**, not two: Creation
+Interview (design/content) → an output-requirements interview → production. The middle stage turned out
+to just be `The Storyized Interviewer`/`The Exceptional Do-er` (`AGENTS.md`) run at the granularity of
+one asset instead of the whole book — see `INTENT.md`'s 2026-08-19 "Two-stage interview per asset"
+addendum (name's a slight misnomer now; it's three stages).
+
 Open threads this raises, not yet answered anywhere else:
 
 - Does this replace or sit alongside `The Storyized Interviewer` — is "creation vs. intake" a fork at
   the top of the pipeline, or a variant mode of the same role?
-- Front matter isn't a "story" — '''resolved''' for the title page: it still gets a slot in
-  `core-inputs/input-book/` (`0-Title_Page/`), same folder convention as a story, rather than its own
-  subdirectory or skipping `core-inputs/` entirely — reused because the "generation code + source
-  assets must be in the repo, not just the rendered result" requirement is the same for both cases, even
-  though a front-matter folder holds different things internally (no `manuscript.txt`/`priority.txt` —
-  see `core-inputs/input-book/README.md`). Whether every front-matter piece follows this same pattern,
-  or this was specific to the title page, is still open.
+- Front matter isn't a "story" — '''resolved''' for the title page: `core-inputs/input-book/0-Title_Page/`
+  holds the Creation Interview's design brief (standing in for a manuscript, since there's no raw draft),
+  and `core-outputs/output-book/0-Title_Page/` holds what gets produced from it — generation code/scripts
+  and the rendered result — mirroring the input/output split `core-inputs/`/`core-outputs/` already draw
+  everywhere else, rather than lumping code+assets onto the input side as first written. Whether every
+  front-matter piece follows this same pattern, or this was specific to the title page, is still open.
 
 Not promoted to `AGENTS.md`/`ROADMAP.md` yet — no real Creation Interview has been run yet to generalize
 from.

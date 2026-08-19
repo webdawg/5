@@ -18,14 +18,16 @@ to output, rather than input being handled by ad hoc one-off logic per case.
 - `inputs/` — things that arrive and need to become an output.
 - `outputs/` — what gets produced from an input.
 - `mediawiki-input/`, `mediawiki-output/` — the first concrete case (below), as flat files in git.
-- `core-inputs/` — raw source content by input type (below), e.g. `core-inputs/input-book/`.
+- `core-inputs/`, `core-outputs/` — raw source content and produced material by type (below), e.g.
+  `core-inputs/input-book/` and `core-outputs/output-book/`.
 - `SPEC.md` (this file) — the shared contract both sides work from.
 
 `inputs/`/`outputs/` are the generic, git-native representation of the input/output side of the system.
 `mediawiki-input/`/`mediawiki-output/` materialize that same split for the first concrete case. Where a
 `mediawiki-input/` page's content isn't itself wiki-content-shaped (e.g. a whole book manuscript),
-`core-inputs/` holds the actual raw material and the wiki page points at it — representations of the
-same abstract split, not competing designs.
+`core-inputs/` holds the actual raw material and the wiki page points at it, and `core-outputs/` holds
+what got produced from it (generation code/scripts plus the rendered result) the same way — the same
+abstract input/output split, materialized on both sides, not competing designs.
 
 ## First concrete case: input wiki / output wiki
 

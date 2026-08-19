@@ -10,6 +10,21 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-09-02
+
+### Added
+- `core-outputs/` (with `output-book/`) — the output-side counterpart to `core-inputs/`: generation
+  code/scripts plus the rendered result, one folder per piece, folder names matching
+  `core-inputs/input-book/` 1:1. First populated (reserved) for `0-Title_Page`.
+- `core-inputs/input-book/0-Title_Page/design-brief.md` — the title page's settled design, standing in
+  for a manuscript since front matter has no raw draft.
+
+### Changed
+- `SPEC.md`'s Layout section — documents `core-outputs/` alongside `core-inputs/`.
+- `core-inputs/input-book/README.md`, `core-inputs/README.md` — corrected: generation code and rendered
+  output belong on the output side (`core-outputs/`), not bundled into a front-matter input folder as
+  first written; a front-matter folder holds a design brief instead of a manuscript.
+
 ## 2026-09-01
 
 ### Added

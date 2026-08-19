@@ -160,3 +160,21 @@ for inputs that start from nothing rather than from raw material.
 
 so lets log all the actions I do next so we can replicate this as a starting interview for creation - a
 Creation Interview - how do I do this - what do I do?
+
+### 2026-08-19 — Two-stage interview per asset: Creation Interview, then an output interview, then the Do-er
+
+**Edited for readability:**
+
+After the Creation Interview settled the title page's design (content: what it depicts, its layers,
+theming), the natural next step wasn't to build it directly — it was a second interview, this time about
+*output* requirements (format, where the rendered result lives, whether the generation code needs to be
+reusable), before handing off to production. That second stage maps onto the pattern `The Storyized
+Interviewer`/`The Exceptional Do-er` already established in `AGENTS.md` — just run at the granularity of
+one asset (the title page) instead of the whole book input. So a single piece of front matter goes
+through three stages: Creation Interview (input/design) → output interview (requirements) → Do-er
+(production) — not two.
+
+**Verbatim:**
+
+lets generate our ouputs for 0, and start this as a new output intervier just like we just did input
+interviewer, and then the output interviewer will hand off to the doer
