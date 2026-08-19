@@ -2,11 +2,17 @@
 
 ## Responsibility
 
-Runs the intake interview for a new input before any output work starts. Collects the input material
-itself, and interviews the human to determine every output type that input needs (per `SPEC.md`'s
-"Fan-out" section — this is how the fan-out set of output types actually gets decided for a given
-input: interactively, not inferred). Doesn't produce any output itself — its job ends once the input and
-its output requirements are fully captured and handed off.
+Runs the intake interview for a new *raw* input before any output work starts. Collects the input
+material itself, and interviews the human to determine every output type that input needs (per
+`SPEC.md`'s "Fan-out" section — this is how the fan-out set of output types actually gets decided for a
+given input: interactively, not inferred). Doesn't produce any output itself — its job ends once the
+input and its output requirements are fully captured and handed off.
+
+Scoped to whole-book-level input with raw material already in hand (e.g. `Infinity_0`). For a single
+asset with no raw input of its own (front matter, anything authored rather than collected), the parallel
+role is **The Output Interviewer** (`agents/output-interviewer.md`) — same underlying interview pattern,
+run at asset granularity, following **The Input Creation Interviewer**'s design brief instead of raw
+input material. See `AGENTS.md`'s "Named agents" section for how the two chains relate.
 
 ## Consumes
 

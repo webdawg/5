@@ -28,43 +28,21 @@ Open threads this raises, not yet answered anywhere else:
 Not promoted to `ROADMAP.md` yet — Phase 1 (a single input wiki / output wiki pair) isn't built, so
 chaining multiple instances together is out of scope until that's proven first.
 
-### A Creation Interview, for outputs authored with no raw input
-*Added 2026-08-19*
-
-`The Storyized Interviewer` (`agents/storyized-interviewer.md`) interviews about output requirements
-for a raw input that has already arrived. The title page (`mediawiki-output/Infinity_0`) exposed a case
-that doesn't fit that shape at all: front matter has no "unedited draft" to interview about — it's
-authored straight to output. A **Creation Interview** would be a second, distinct interview role/pattern
-for exactly that case: inputs that start from nothing rather than from raw material.
-
-Plan to derive it empirically rather than design it upfront: log the concrete actions/prompts taken
-while actually building the title page next (reusing `prompt-log/`'s existing raw-capture convention),
-then distill the recurring question/decision pattern out of that trace into a new
-`agents/creation-interviewer.md` role doc, mirroring `storyized-interviewer.md`'s structure.
-
-Running the title page through this for real turned up a **three-stage flow**, not two: Creation
-Interview (design/content) → an output-requirements interview → production. The middle stage turned out
-to just be `The Storyized Interviewer`/`The Exceptional Do-er` (`AGENTS.md`) run at the granularity of
-one asset instead of the whole book — see `INTENT.md`'s 2026-08-19 "Two-stage interview per asset"
-addendum (name's a slight misnomer now; it's three stages).
-
-Open threads this raises, not yet answered anywhere else:
-
-- Does this replace or sit alongside `The Storyized Interviewer` — is "creation vs. intake" a fork at
-  the top of the pipeline, or a variant mode of the same role?
-- Front matter isn't a "story" — '''resolved''' for the title page: `core-inputs/input-book/0-Title_Page/`
-  holds the Creation Interview's design brief (standing in for a manuscript, since there's no raw draft),
-  and `core-outputs/output-book/0-Title_Page/` holds what gets produced from it — generation code/scripts
-  and the rendered result — mirroring the input/output split `core-inputs/`/`core-outputs/` already draw
-  everywhere else, rather than lumping code+assets onto the input side as first written. Whether every
-  front-matter piece follows this same pattern, or this was specific to the title page, is still open.
-
-Not promoted to `AGENTS.md`/`ROADMAP.md` yet — no real Creation Interview has been run yet to generalize
-from.
-
 ## Promoted
 
-Nothing yet.
+### A Creation Interview, for outputs authored with no raw input
+*Added 2026-08-19, promoted 2026-08-19*
+
+Promoted to **The Input Creation Interviewer** (`agents/input-creation-interviewer.md`), the first of a
+three-stage chain for a piece with no raw input: Creation Interview (this role) → **The Output
+Interviewer** (`agents/output-interviewer.md`, its own named role, not folded into The Storyized
+Interviewer) → production (`The Exceptional Do-er`). See `AGENTS.md`'s "Named agents: the book-input
+pipeline" section for the full chain (two entry chains converging on the same Do-er), and the title page
+(`core-outputs/output-book/0-Title_Page/`) for the real trace this was derived from.
+
+Still open, noted in the role docs rather than here: whether every front-matter piece follows the same
+`core-inputs/`/`core-outputs/` split the title page landed on, whether asset-granularity interviews need
+their own `<Piece>_Interview`-style log page, and whether a design brief stays revisable after handoff.
 
 ## Rejected
 

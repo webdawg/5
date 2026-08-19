@@ -24,18 +24,46 @@ fourth.
 
 The first real usage (the `Infinity 0` book input) surfaced exactly that gap: nothing above covers
 *collecting* an input and interviewing the human for its output requirements before any Producer work
-starts. Two named agents cover that pipeline:
+starts. A second gap showed up producing the title page (`core-outputs/output-book/0-Title_Page/`,
+2026-08-19): front matter has no raw draft to interview about — it has to be authored, not collected — so
+a different, parallel chain covers that case instead of extending the first one. Five named agents cover
+this pipeline, across two entry chains that both end at the same Do-er:
+
+**Whole-book input, raw material already in hand** (e.g. `Infinity_0` itself):
 
 - **The Storyized Interviewer** — runs the intake interview: collects the input, and asks the human
-  which output types (`SPEC.md`'s "Fan-out") are needed and what each one requires. See
+  which output types (`SPEC.md`'s "Fan-out") are needed and what each requires. See
   `agents/storyized-interviewer.md`.
-- **The Exceptional Do-er** — takes the Interviewer's completed input + requirements record and produces
-  every output type it identified. See `agents/exceptional-doer.md`.
+
+**A single asset with no raw input of its own** (front matter, or anything else authored directly rather
+than edited from arriving raw material):
+
+- **The Input Creation Interviewer** — runs first. Interviews the human to determine the actual
+  content/design itself — not output-type requirements, that's the next stage. Produces a design brief
+  that stands in for the manuscript a story would have. Always hands off to The Output Interviewer next,
+  never straight to The Exceptional Do-er, even for a simple piece — keeps the chain consistent. See
+  `agents/input-creation-interviewer.md`.
+- **The Output Interviewer** — runs second, against the design brief instead of raw input material.
+  Same interview pattern as The Storyized Interviewer, kept as its own named role rather than folded in
+  silently, since the human wanted the three stages named symmetrically. Proven by the title page, which
+  has its own output requirements independent of the rest of the book. See
+  `agents/output-interviewer.md`.
+
+**Both chains converge here:**
+
+- **The Exceptional Do-er** — takes the completed record from either The Storyized Interviewer or The
+  Output Interviewer and produces every output type it identified. Runs at either granularity — a whole
+  book input, or one asset within it. See `agents/exceptional-doer.md`.
 - **The Narrative Reviewer** — reviews scene-breakdown decisions (currently: for the 3D output) for
   narrative sense, alongside full human review, not in place of it. Unlike every other agent here, it's
   **stateful**: it accumulates memory about the user and past decisions and gets trained directly, which
   is why it lives in its own subfolder, `agents/narrative-reviewer/`, with a `memory/` of its own, rather
   than a single file like the other roles. See `agents/narrative-reviewer/README.md`.
+
+**Activation:** conversational, not automated — a human tells the assistant to start a given stage (e.g.
+"let's work on the title page"), same as every other role here right now. No slash command or trigger
+condition decides this automatically yet; see `ROADMAP.md` Phase 3 ("Instant") for when automatic
+triggering becomes in-scope generally, not just for this pipeline.
 
 Their relationship to Orchestrator/Producer/Validator above isn't decided yet — see each one's own open
 questions. Treat them as the concrete, named agents for the book-input pipeline first, and fold that
@@ -45,8 +73,9 @@ back into the generic roles once it's clear whether they're the same thing or ge
 
 - `agents/orchestrator.md`, `agents/producer.md`, `agents/validator.md` — one doc per generic role: its
   responsibilities, inputs it consumes, outputs it produces, and how it hands off to the next role.
-- `agents/storyized-interviewer.md`, `agents/exceptional-doer.md` — the named book-input pipeline agents,
-  same template.
+- `agents/input-creation-interviewer.md`, `agents/output-interviewer.md`,
+  `agents/storyized-interviewer.md`, `agents/exceptional-doer.md` — the named book-input pipeline
+  agents, same template.
 - `agents/narrative-reviewer/` — the one stateful named agent, as a subfolder rather than a single file:
   `README.md` for its role definition, `memory/` for what it accumulates over time.
 

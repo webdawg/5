@@ -2,14 +2,23 @@
 
 ## Responsibility
 
-Takes the completed input + requirements record from **The Storyized Interviewer** and does the actual
-work: produces every output type the interview identified. This is where "turn input into output"
-actually happens for the book-input pipeline, per `SPEC.md`'s "Fan-out" section.
+Takes the completed input + requirements record from **The Storyized Interviewer** (whole-book input)
+or **The Output Interviewer** (a single asset within one, per `agents/output-interviewer.md`) and does
+the actual work: produces every output type the interview identified. This is where "turn input into
+output" actually happens for the book-input pipeline, per `SPEC.md`'s "Fan-out" section.
+
+Runs at either granularity: once per book-level input, or once per individual asset within one (proven
+2026-08-19 producing the title page — `core-outputs/output-book/0-Title_Page/`, built as a real
+generation tool, not a one-off script, per that round's output interview). At asset granularity, the
+chain leading here starts with **The Input Creation Interviewer** → **The Output Interviewer** instead
+of The Storyized Interviewer against raw `mediawiki-input/` material — see `AGENTS.md`'s "Named agents"
+section.
 
 ## Consumes
 
-- The input + requirements record handed off by The Storyized Interviewer: the input material, plus the
-  list of output types and their per-type requirements.
+- The input + requirements record handed off by The Storyized Interviewer or The Output Interviewer: the
+  input material (or, at asset granularity, a design brief from The Input Creation Interviewer), plus
+  the list of output types and their per-type requirements.
 
 ## Produces
 

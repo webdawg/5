@@ -10,6 +10,25 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-09-03
+
+### Added
+- `agents/input-creation-interviewer.md` — The Input Creation Interviewer, promoted from `IDEAS.md`'s
+  Creation Interview entry: the first stage for a piece with no raw input.
+- `agents/output-interviewer.md` — The Output Interviewer: the second stage for that same case, same
+  interview pattern as The Storyized Interviewer but kept as its own named role (not folded in) and run
+  against a design brief instead of raw input material.
+
+### Changed
+- `AGENTS.md` — documents two parallel entry chains converging on the same Do-er: The Storyized
+  Interviewer for whole-book raw input, or The Input Creation Interviewer → The Output Interviewer for a
+  single asset with no raw input of its own (proven producing the title page). The Exceptional Do-er
+  runs at either granularity.
+- `agents/storyized-interviewer.md` — scope clarified back to whole-book raw input, cross-referencing
+  The Output Interviewer for the asset-granularity case.
+- `agents/exceptional-doer.md` — updated to name both possible handoff sources.
+- `IDEAS.md` — Creation Interview entry moved to Promoted.
+
 ## 2026-09-02
 
 ### Added
