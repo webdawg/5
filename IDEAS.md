@@ -46,9 +46,13 @@ Open threads this raises, not yet answered anywhere else:
 
 - Does this replace or sit alongside `The Storyized Interviewer` — is "creation vs. intake" a fork at
   the top of the pipeline, or a variant mode of the same role?
-- Front matter isn't a "story" — does it get its own `core-inputs/` subdirectory (e.g.
-  `core-inputs/front-matter/`), or does authored-not-raw content skip `core-inputs/` entirely and go
-  straight to `mediawiki-output/` the way the title page already did?
+- Front matter isn't a "story" — '''resolved''' for the title page: it still gets a slot in
+  `core-inputs/input-book/` (`0-Title_Page/`), same folder convention as a story, rather than its own
+  subdirectory or skipping `core-inputs/` entirely — reused because the "generation code + source
+  assets must be in the repo, not just the rendered result" requirement is the same for both cases, even
+  though a front-matter folder holds different things internally (no `manuscript.txt`/`priority.txt` —
+  see `core-inputs/input-book/README.md`). Whether every front-matter piece follows this same pattern,
+  or this was specific to the title page, is still open.
 
 Not promoted to `AGENTS.md`/`ROADMAP.md` yet — no real Creation Interview has been run yet to generalize
 from.
