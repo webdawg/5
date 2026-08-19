@@ -29,6 +29,8 @@ dump instead) and never deleted.
 
 ## Cadence
 
-No automatic trigger — a dump happens when asked. Reasonable default: whenever a batch of work is
-committed and pushed, since that's already the natural checkpoint. For fully automatic capture, a Claude
-Code `Stop`/`SessionEnd` hook could trigger this — not set up here unless asked for.
+Automatic: a `SessionEnd` hook (`.claude/settings.json`, running `.claude/hooks/dump-prompt-log.py`)
+dumps every session's prompts when the session ends. It reads the session transcript directly rather
+than re-typing anything, so captured text is exactly what was submitted — real prompts only (skips tool
+results and injected skill/system content). A dump can still be taken manually at any other checkpoint
+(e.g. whenever a batch of work is committed and pushed) by running that same script.

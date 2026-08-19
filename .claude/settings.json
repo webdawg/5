@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR:-/home/neoweb/DATA/CODE/5}/.claude/hooks/dump-prompt-log.py\" 2>/dev/null || true",
+            "timeout": 30,
+            "statusMessage": "Dumping session prompts to prompt-log/..."
+          }
+        ]
+      }
+    ]
+  }
+}

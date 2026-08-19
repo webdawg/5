@@ -144,3 +144,19 @@ so you will have book inputs lets create a core-inputs/input-book/0-#### spec st
 the numbers will be the order - the stuff after the - will be the name - the name will have underscores
 - our system of ordering with be a priority text file inside of the last sub folder that will have a
 number for priority
+
+### 2026-08-19 — A Creation Interview, for outputs with no raw input behind them
+
+**Edited for readability:**
+
+The title page (`mediawiki-output/Infinity_0`) surfaced a gap: it was authored straight to output with
+no raw input counterpart — front matter has no "unedited draft" the way a story has a manuscript, so
+`The Storyized Interviewer`'s existing intake pattern (interview *about* an already-arrived raw input)
+doesn't fit it. The plan is to work the title page next and log the actions taken along the way, then
+distill that concrete trace into a repeatable **Creation Interview** — a second interview role/pattern
+for inputs that start from nothing rather than from raw material.
+
+**Verbatim:**
+
+so lets log all the actions I do next so we can replicate this as a starting interview for creation - a
+Creation Interview - how do I do this - what do I do?

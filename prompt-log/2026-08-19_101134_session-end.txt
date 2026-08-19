@@ -1,0 +1,11 @@
+Dump taken 2026-08-19 10:11:34, auto-captured on session end (session 8dee65b9-e169-453b-8b3b-cd061f44edcc). Covers all prompts submitted in that session.
+
+1. so we need to work on the title page next, I have not created an input for the title page or have i?
+
+---
+
+2. so lets log all the actions I do next so we can replicate this as a starting interview for creation - a Creation Interview - how do I do this - what do I do?
+
+---
+
+3. okay, but I think there is something we need to activate so you can do prompt log correctly

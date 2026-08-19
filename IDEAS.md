@@ -28,6 +28,31 @@ Open threads this raises, not yet answered anywhere else:
 Not promoted to `ROADMAP.md` yet — Phase 1 (a single input wiki / output wiki pair) isn't built, so
 chaining multiple instances together is out of scope until that's proven first.
 
+### A Creation Interview, for outputs authored with no raw input
+*Added 2026-08-19*
+
+`The Storyized Interviewer` (`agents/storyized-interviewer.md`) interviews about output requirements
+for a raw input that has already arrived. The title page (`mediawiki-output/Infinity_0`) exposed a case
+that doesn't fit that shape at all: front matter has no "unedited draft" to interview about — it's
+authored straight to output. A **Creation Interview** would be a second, distinct interview role/pattern
+for exactly that case: inputs that start from nothing rather than from raw material.
+
+Plan to derive it empirically rather than design it upfront: log the concrete actions/prompts taken
+while actually building the title page next (reusing `prompt-log/`'s existing raw-capture convention),
+then distill the recurring question/decision pattern out of that trace into a new
+`agents/creation-interviewer.md` role doc, mirroring `storyized-interviewer.md`'s structure.
+
+Open threads this raises, not yet answered anywhere else:
+
+- Does this replace or sit alongside `The Storyized Interviewer` — is "creation vs. intake" a fork at
+  the top of the pipeline, or a variant mode of the same role?
+- Front matter isn't a "story" — does it get its own `core-inputs/` subdirectory (e.g.
+  `core-inputs/front-matter/`), or does authored-not-raw content skip `core-inputs/` entirely and go
+  straight to `mediawiki-output/` the way the title page already did?
+
+Not promoted to `AGENTS.md`/`ROADMAP.md` yet — no real Creation Interview has been run yet to generalize
+from.
+
 ## Promoted
 
 Nothing yet.
