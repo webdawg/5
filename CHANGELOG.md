@@ -10,6 +10,38 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-09-04
+
+### Added
+- `agents/output-format-interviewer.md` — The Output Format Interviewer: a new stage inserted between
+  The Output Interviewer and The Exceptional Do-er. Given one already-decided output type, interviews
+  the human on every distinct format/audience variant that type needs (accessibility, platform,
+  interactivity, audience filtering — not a different technology, that's still Fan-out). Added after The
+  Output Interviewer's own first interview round deferred exactly this question ("one render now, or
+  several formats up front?") instead of resolving it.
+
+### Changed
+- `INTENT.md` — new addendum capturing the gap and the real interview run against the title page: a wide
+  list of format/audience variants (AI accessibility, human accessibility, animated/interactive, puzzle,
+  web-hosted, age-censored, mobile) plus output-type-level examples (3D model in TypeScript/WebGL,
+  hacker-facing source+servers, text-to-speech audio), and a related but distinct gap — the pipeline
+  stops at `render/`, not a genuinely published/reached location.
+- `SPEC.md` — new "Format variants: one output type, multiple deliverable forms" section (the
+  format/audience axis, distinct from Fan-out's output-type axis) and new "Publishing" section (render
+  output vs. reached output); new open questions for both.
+- `AGENTS.md` — asset chain now reads Input Creation Interviewer → Output Interviewer → **Output Format
+  Interviewer** → Exceptional Do-er; six named agents, not five.
+- `agents/output-interviewer.md` — handoff corrected: passes to The Output Format Interviewer, not
+  straight to The Exceptional Do-er.
+- `agents/exceptional-doer.md` — now also runs once per format variant of one asset, not just once per
+  asset; new open question on whether it owns publishing too.
+
+### Not done yet
+- None of the newly identified format variants (beyond the existing print render) have actually been
+  built, and the print render itself hasn't been moved into a `render/print/` subfolder or reached a
+  published location — this round captured requirements, per the established interview-stage pattern,
+  not production work.
+
 ## 2026-09-03
 
 ### Added

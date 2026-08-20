@@ -89,6 +89,49 @@ This also resolves the old "is there always exactly one input wiki and one outpu
 there's one input wiki, but potentially many *kinds* of output, of which `mediawiki-output/` (rendered
 wiki content or a link) is just one type — not the whole output side.
 
+## Format variants: one output type, multiple deliverable forms
+
+Per `INTENT.md`'s 2026-09-04 addendum: fan-out (above) splits one input into multiple output *types*
+(LaTeX, webpage, 3D model, audio, ...). Within a single output type there's a second, distinct axis —
+multiple *format/audience variants* of that same conceptual deliverable can be needed at once, not
+different technologies but different packagings of the same piece for different consumers. Surfaced
+running this for real against the title page's print render: an AI-accessibility variant, a
+human-accessibility variant, an animated/interactive variant, a puzzle variant, a standard web-hosted
+variant, an age-censored variant, a mobile variant — alongside output-*type*-level examples raised in the
+same round (a 3D model in TypeScript/WebGL, a source-code-and-servers output for technical/"hacker"
+users, a text-to-speech audio output).
+
+Deciding this axis is **The Output Format Interviewer**'s job (`AGENTS.md`,
+`agents/output-format-interviewer.md`) — runs after an output type is already decided (by The Storyized
+Interviewer or The Output Interviewer) and before The Exceptional Do-er, one interview per output type.
+
+**Tooling convention (2026-09-04):** each format variant gets its own separate generation script, not one
+shared parametrized pipeline — chosen to avoid one script accumulating every variant's special-casing.
+Each variant's rendered result lives in its own subfolder under `render/` (e.g. `render/print/`,
+`render/web/`), mirroring `render/ARCHIVE/`'s existing subfolder convention for prior versions.
+
+## Publishing: render output isn't the same as a reached, final output
+
+The same 2026-09-04 round surfaced a related but distinct gap: the pipeline as built stops at a
+generation/render step (`core-outputs/<piece>/render/`), which is a work product, not a genuinely
+*published*, externally-reachable final artifact. Even the completed title page print render doesn't yet
+live anywhere a real consumer would reach it. Not yet resolved — see open questions below.
+
+### Open questions (format variants / publishing)
+
+- Is the full 2026-09-04 list of format/audience variants a universal checklist (every output type gets
+  checked against all of them), or decided fresh per output type/asset by whoever runs The Output Format
+  Interviewer?
+- What does "published" concretely mean, and where does it live — the still-empty top-level `outputs/`,
+  a `published/` subfolder alongside each piece's `render/`, something else? Blocked on Phase 0's
+  still-open "what counts as output concretely" question below.
+- Does every output type go through The Output Format Interviewer, or only ones where format/audience
+  variation is plausible (e.g. does a 3D model plausibly need an "age-censored" variant, or is that
+  variant type-specific)?
+- Does The Output Format Interviewer also apply to the whole-book chain (after The Storyized Interviewer,
+  before The Exceptional Do-er), or only the asset chain (after The Output Interviewer) it was scoped to
+  when introduced? Not yet decided — see `agents/output-format-interviewer.md`.
+
 ### Open questions (fan-out)
 
 - How is the set of output types for a given input decided — declared on the input itself, inferred by

@@ -27,7 +27,11 @@ even though the interview technique is the same — the human explicitly wanted 
 
 ## Handoff
 
-Always passes to **The Exceptional Do-er** next.
+Passes to **The Output Format Interviewer** next (added 2026-09-04 — see
+`agents/output-format-interviewer.md`), not straight to The Exceptional Do-er. This round's own Q1
+("one master render now, or several formats/resolutions up front?") turned out to be exactly the
+question that new stage owns — deferring it here rather than resolving it was the gap that led to
+inserting it.
 
 ## Interview log — what this actually looked like (the title page, 2026-08-19)
 

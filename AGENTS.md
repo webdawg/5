@@ -26,8 +26,11 @@ The first real usage (the `Infinity 0` book input) surfaced exactly that gap: no
 *collecting* an input and interviewing the human for its output requirements before any Producer work
 starts. A second gap showed up producing the title page (`core-outputs/output-book/0-Title_Page/`,
 2026-08-19): front matter has no raw draft to interview about — it has to be authored, not collected — so
-a different, parallel chain covers that case instead of extending the first one. Five named agents cover
-this pipeline, across two entry chains that both end at the same Do-er:
+a different, parallel chain covers that case instead of extending the first one. A third gap showed up
+running the asset chain for real (2026-09-04): deciding an output *type* isn't the same as deciding every
+*format/audience variant* that type needs (print vs. web vs. accessibility-facing vs. age-censored, ...)
+— see `SPEC.md`'s "Format variants" section. Six named agents cover this pipeline, across two entry
+chains that both end at the same Do-er:
 
 **Whole-book input, raw material already in hand** (e.g. `Infinity_0` itself):
 
@@ -46,14 +49,22 @@ than edited from arriving raw material):
 - **The Output Interviewer** — runs second, against the design brief instead of raw input material.
   Same interview pattern as The Storyized Interviewer, kept as its own named role rather than folded in
   silently, since the human wanted the three stages named symmetrically. Proven by the title page, which
-  has its own output requirements independent of the rest of the book. See
-  `agents/output-interviewer.md`.
+  has its own output requirements independent of the rest of the book. Hands off to The Output Format
+  Interviewer next, not straight to The Exceptional Do-er. See `agents/output-interviewer.md`.
+- **The Output Format Interviewer** — runs third, once an output type is already decided. Interviews the
+  human on every distinct format/audience variant that single output type needs (accessibility,
+  platform, interactivity, audience filtering — not a different technology, that's still Fan-out). Added
+  2026-09-04 after The Output Interviewer's own first round deferred exactly this question instead of
+  resolving it. See `agents/output-format-interviewer.md` and `SPEC.md`'s "Format variants" section.
+  Whether this stage also belongs in the whole-book chain (after The Storyized Interviewer) is open —
+  see its own doc.
 
 **Both chains converge here:**
 
-- **The Exceptional Do-er** — takes the completed record from either The Storyized Interviewer or The
-  Output Interviewer and produces every output type it identified. Runs at either granularity — a whole
-  book input, or one asset within it. See `agents/exceptional-doer.md`.
+- **The Exceptional Do-er** — takes the completed record from The Storyized Interviewer, The Output
+  Interviewer, or The Output Format Interviewer, and produces every output type/variant it identified.
+  Runs at either granularity — a whole book input, or one asset (or one format variant of one asset)
+  within it. See `agents/exceptional-doer.md`.
 - **The Narrative Reviewer** — reviews scene-breakdown decisions (currently: for the 3D output) for
   narrative sense, alongside full human review, not in place of it. Unlike every other agent here, it's
   **stateful**: it accumulates memory about the user and past decisions and gets trained directly, which
@@ -74,8 +85,8 @@ back into the generic roles once it's clear whether they're the same thing or ge
 - `agents/orchestrator.md`, `agents/producer.md`, `agents/validator.md` — one doc per generic role: its
   responsibilities, inputs it consumes, outputs it produces, and how it hands off to the next role.
 - `agents/input-creation-interviewer.md`, `agents/output-interviewer.md`,
-  `agents/storyized-interviewer.md`, `agents/exceptional-doer.md` — the named book-input pipeline
-  agents, same template.
+  `agents/output-format-interviewer.md`, `agents/storyized-interviewer.md`,
+  `agents/exceptional-doer.md` — the named book-input pipeline agents, same template.
 - `agents/narrative-reviewer/` — the one stateful named agent, as a subfolder rather than a single file:
   `README.md` for its role definition, `memory/` for what it accumulates over time.
 

@@ -178,3 +178,53 @@ through three stages: Creation Interview (input/design) → output interview (re
 
 lets generate our ouputs for 0, and start this as a new output intervier just like we just did input
 interviewer, and then the output interviewer will hand off to the doer
+
+### 2026-09-04 — A missing stage: format/audience variants of one output type, and a publishing gap
+
+**Edited for readability:**
+
+The Output Interviewer's own first interview question for the title page ("one master render now, or
+several formats/resolutions up front?") got answered by deferring the question ("high-res first,
+everything else later"), not by giving format multiplicity a real stage. That's a gap: a new role, **The
+Output Format Interviewer**, gets inserted into the asset chain between The Output Interviewer and The
+Exceptional Do-er — given one already-decided output type, interview the human on every distinct
+format/audience variant that single deliverable needs.
+
+Running that interview for real against the already-completed title page print render surfaced a wide
+list of variants to plan for across the pipeline generally, not just the title page: an
+AI-accessibility-facing output, a human-accessibility-facing output, an animated/interactive version a
+user can move, a puzzle version, a standard web-hosted version, an age-censored version, a mobile
+version — alongside output-*type*-level examples raised in the same breath (a 3D model built in
+TypeScript/WebGL, a source-code-and-servers output aimed at technical/"hacker" users, a text-to-speech
+audio output). Whether every one of these applies to every output type, or this is the general universe
+to check each output type against, is open — see `SPEC.md`.
+
+The same round also surfaced a related, distinct gap: the pipeline as built stops at a
+generation/render step (`core-outputs/<piece>/render/`), which is a work product, not a genuinely
+*published*, externally-reachable final artifact — even the completed title page print render doesn't
+live anywhere a real consumer would reach it yet. The chain needs to reach all the way to a published
+end, not just a rendered one.
+
+Tooling/layout decided for the format-variant axis: each variant gets its own separate generation
+script (not one shared parametrized pipeline, to avoid one script accumulating every variant's
+special-casing), and lives in its own subfolder under `render/` (e.g. `render/print/`, `render/web/`),
+mirroring `render/ARCHIVE/`'s existing subfolder convention for prior versions.
+
+**Verbatim:**
+
+so we need to work on the output interviewer - we did not talk about multiple formats here, and that is
+a problem, so we need to insert an output multiple formats interviewer before the doer and after the
+output interviewer - lets construct, and document, and spec, and intent that, and go through an
+interview, save it as an example, and get this done
+
+Interview answer (format variants needed): get this into the spec: output dedicated to AI accessibility,
+output dedicated human accessibility, a moving animated version that users can move if they want, a
+puzzle version, we just did the print version and we need to create a chain that goes to the end so for
+the print version we even need to add to the final published dir, output dedicated to normal website with
+regular web server, an output dedicated to age censoring, an output of 3d model built on typescript and
+web gl, an output for hackers that is source code and servers, an audio output using some cool text to
+speech voice, an output for mobile
+
+Interview answer (tooling shape): Separate script per format.
+
+Interview answer (storage layout): Subfolder per format under render/.
