@@ -228,3 +228,54 @@ speech voice, an output for mobile
 Interview answer (tooling shape): Separate script per format.
 
 Interview answer (storage layout): Subfolder per format under render/.
+
+### 2026-09-08 — Correction: "web" isn't a format variant, it's the webpage output type, properly shaped
+
+**Edited for readability:**
+
+The 2026-09-04 round's "web" answer was wrong in kind, not just underspecified: a resized static image
+of the title page isn't what "an output dedicated to normal website with regular web server" meant. The
+real webpage output — mentioned only in passing since the 2026-08-23 addendum ("a webpage output for a
+possible interactive version of the story") and never fleshed out — is a directory of HTML files a
+reader clicks through sequentially, like flipping pages in a physical book, not a single static asset.
+
+Settled shape, via a short interview: one HTML page per input asset/story (mirrors
+`core-inputs/input-book/<N>-<Name>/` 1:1, ordered the same way — see below), living in a new dedicated
+output folder spanning the whole book (`core-outputs/output-book/web-book/`, not nested inside any one
+asset's own folder, since it isn't scoped to one asset). The already-built `render/web/title-page-web.png`
+stays — it was real, correct work, just misclassified — now embedded as the image inside the title
+page's actual book-page HTML rather than being the deliverable itself.
+
+**Verbatim:**
+
+the web version is bad - we need to talk about this - we are going to put a bunch of html files in a dir,
+and users will click through like a normal book - update the spec on this, and fix this.
+
+Interview answer (page granularity): One HTML page per input asset/story.
+
+Interview answer (directory location): New dedicated output folder spanning the whole book.
+
+Interview answer (existing web PNG): Keep it, embed it as the image inside the new HTML page.
+
+### 2026-09-09 — A publish-output/ folder for final, ready-to-publish deliverables only
+
+**Edited for readability:**
+
+`SPEC.md`'s "Publishing" section had been open since 2026-09-04: render output isn't the same as a
+reached, final output. Settled: a new top-level `publish-output/` folder, for final work only — distinct
+from `core-outputs/`, which keeps generation code and iteration history exactly as already spec'd.
+`web-book/` moved there first, whole (source and render together, since it has no iteration history of
+its own to leave behind). Scope is deliberately incremental, not decided all at once: only the title
+page has been built so far, so only its web-book piece moves now — which of its other format variants
+(print, mobile, accessibility, interactive, puzzle, age-censored) also count as "final" is left for
+later, once there's more to weigh it against.
+
+**Verbatim:**
+
+move web-book and the final things we are publishing to a new publish-output folder - we still use the
+other folders and structure as already speced - this publish-output is for FINAL work only
+
+Interview answer (scope): we have only gotten to this piece yet - the web version, so lets just stay
+focused on that, and define the rest down the road
+
+Interview answer (archive location): Stay under core-outputs.

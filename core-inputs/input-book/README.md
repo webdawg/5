@@ -17,6 +17,7 @@ than edited from a draft.
 ```
 input-book/
 ├── 0-Title_Page/
+│   ├── priority.txt
 │   └── design-brief.md
 ├── 1-Some_Story_Title/
 │   ├── priority.txt
@@ -30,10 +31,13 @@ input-book/
 - **Folder name** — `<N>-<Title>`: `N` is a rough, human-sortable order hint; `Title` uses underscores
   for spaces, matching the same convention as `mediawiki-input/`'s page filenames. Matches the
   corresponding `core-outputs/output-book/` folder name exactly.
-- **Story folders** hold **`priority.txt`** (a single integer — the **authoritative** order, not the
-  folder-name number; reordering a story means editing this file, not renaming the folder, so reordering
-  never breaks anything that references the folder by name) and **`manuscript.txt`** (the raw, unedited
-  story text itself).
+- **Every folder** holds **`priority.txt`** (a single integer — the **authoritative** order, not the
+  folder-name number; reordering means editing this file, not renaming the folder, so reordering never
+  breaks anything that references the folder by name) — extended 2026-09-08 (`SPEC.md`'s "Webpage
+  output" section) from story folders to *every* folder, front matter included, so the webpage output's
+  page-ordering has one source across every kind of asset rather than special-casing front matter as
+  "always first."
+- **Story folders** additionally hold **`manuscript.txt`** (the raw, unedited story text itself).
 - **Front-matter folders** hold no manuscript — there's no raw draft, so the Creation Interview's settled
   decisions stand in for one: a design brief (what the piece depicts/contains, and why), which is this
   piece's actual raw input. May also hold true raw source material pulled in as an ingredient (e.g. a

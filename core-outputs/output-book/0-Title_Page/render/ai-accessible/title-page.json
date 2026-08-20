@@ -1,0 +1,69 @@
+{
+  "title": "Infinity 0",
+  "author": "Agent 0",
+  "author_is_pseudonym": true,
+  "piece_type": "book title page (front matter)",
+  "canvas": {
+    "width_px": 1650,
+    "height_px": 2550,
+    "dpi": 300,
+    "trim_size_in": [
+      5.5,
+      8.5
+    ]
+  },
+  "layers_back_to_front": [
+    {
+      "name": "background",
+      "type": "photograph",
+      "source": "NASA/Goddard Space Flight Center Milky Way photo, public domain, 2003",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Milky_Way_galaxy.jpg",
+      "display": "converted to black-and-white (black background lightened to white first)"
+    },
+    {
+      "name": "wireframe",
+      "type": "generated overlay",
+      "description": "A futuristic wireframe map traced from the background photo's own brightness structure -- two closed contour levels plus a topological skeleton (medial-axis thinning) branching wherever the photo's bright structure actually branches, not an abstract or randomly-generated shape.",
+      "color_rgb": [
+        110,
+        225,
+        255
+      ]
+    },
+    {
+      "name": "crayon",
+      "type": "generated overlay",
+      "description": "A hand-drawn-imperfect crayon layer, all in one color: a small circled X at the galactic center marking where a child wants to go, a circle in the bottom-left corner containing a stick-figure child ('earth'), and a single leaping arc connecting the two, ending in an arrowhead pointing at the X. Represents a child reading along and participating, not just decoration -- the book's theme is hope, and children are part of that hope.",
+      "color_rgb": [
+        225,
+        15,
+        15
+      ]
+    },
+    {
+      "name": "title_text",
+      "type": "text",
+      "text": "INFINITY 0",
+      "font": "custom-built monospace all-caps stencil font (not a vendored typeface)",
+      "color_rgb": [
+        15,
+        15,
+        15
+      ],
+      "position_from_top_fraction": 0.125,
+      "note": "working title, not yet final"
+    },
+    {
+      "name": "author_text",
+      "type": "text",
+      "text": "BY AGENT 0",
+      "font": "same custom font as title_text, smaller",
+      "color_rgb": [
+        15,
+        15,
+        15
+      ]
+    }
+  ],
+  "semantic_summary": "The title page for the science-fiction book Infinity 0 by Agent 0 (a pseudonym). A black-and-white NASA photo of the Milky Way fills the page, overlaid with a cyan technical wireframe tracing the galaxy's real structure, and a red hand-drawn crayon mark showing a child figure on Earth reaching toward a destination at the galactic center. The title and author appear near the top in a custom blocky monospace font."
+}

@@ -45,6 +45,10 @@ automatically, without being asked each time — then do whatever was actually a
 - `core-outputs/` — `core-inputs/`'s output-side counterpart: generation code/scripts plus the rendered
   result, one folder per piece, matching `core-inputs/input-book/`'s folder names 1:1 (e.g.
   `core-outputs/output-book/`). See `core-outputs/README.md`.
+- `publish-output/` — final, ready-to-publish deliverables only, once something is actually judged done
+  (`SPEC.md`'s "Publishing" section). Distinct from `core-outputs/`, which keeps generation code and
+  iteration history — not final work. Populated incrementally, piece by piece, not all at once; currently
+  holds `web-book/` (the whole-book click-through webpage output).
 - `agents/` — one doc per agent role (`orchestrator.md`, `producer.md`, `validator.md`).
 - `prompt-log/` — raw, verbatim history of prompts given to the AI assistant on this project, separate
   from the curated docs above. See `prompt-log/README.md` for format and cadence — a live instance of

@@ -10,6 +10,96 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-09-09
+
+### Added
+- `publish-output/` — new top-level folder for final, ready-to-publish deliverables only, resolving
+  part of `SPEC.md`'s long-open "Publishing" question (where "published" concretely lives).
+  `core-outputs/` keeps generation code and iteration history exactly as already spec'd; nothing else
+  about its structure changed.
+
+### Changed
+- `publish-output/web-book/` (was `core-outputs/output-book/web-book/`) — moved whole (source and
+  render together, since it has no iteration history of its own to leave behind). `src/build.py`'s path
+  constants rewired for the new location and re-run to confirm identical output.
+- `SPEC.md` — "Publishing" section marked partially resolved (location decided; deployment/hosting still
+  fully open); "Webpage output" section's location updated; `Layout` registers `publish-output/`.
+- `CLAUDE.md` — registers `publish-output/` alongside the other top-level directories.
+- `agents/output-format-interviewer.md`, `core-outputs/output-book/0-Title_Page/README.md`,
+  `publish-output/web-book/README.md` — path references updated.
+
+### Not done yet
+- Scope deliberately incremental, not decided all at once: whether any of the title page's other seven
+  format variants (print, mobile, AI-accessible, human-accessible, interactive, puzzle, age-censored)
+  also count as "final" and move to `publish-output/` — left for later, per the user's own instruction.
+- Actual deployment/hosting of `publish-output/web-book/` — still just a location, not a live site.
+
+## 2026-09-08
+
+### Added
+- `SPEC.md` — new "Webpage output: a click-through directory of HTML pages" section, fleshing out the
+  webpage output type first named in the 2026-08-23 addendum but never shaped: one HTML page per input
+  asset/story (mirrors `core-inputs/input-book/<N>-<Name>/` 1:1), ordered by `priority.txt`, in a new
+  dedicated `core-outputs/output-book/web-book/` folder — not nested inside any one asset's own folder.
+- `core-outputs/output-book/web-book/` — the webpage output's home: `src/build.py` (scans
+  `core-inputs/input-book/*/priority.txt`, embeds each asset's `render/web/*.png` into a self-contained
+  HTML page, links consecutive pages with "← Previous"/"Next →", generates `index.html`) and
+  `render/pages/` (currently: `index.html`, `page-000-title-page.html`).
+- `core-inputs/input-book/0-Title_Page/priority.txt` (`0`) — front-matter folders now carry
+  `priority.txt` too, extending the existing story-only convention so the webpage builder has one
+  ordering source across every kind of asset.
+
+### Changed
+- `INTENT.md` — new addendum: the 2026-09-04 "web" answer was a misclassification, not just
+  underspecified — corrected to the webpage output type above.
+- `SPEC.md`'s "Format variants" section — corrected: "web" removed from the format-variant list: it's an
+  output *type*, not a repackaging of one asset. The format-variant/output-type line
+  (`agents/output-format-interviewer.md`) held up on its first real test.
+- `core-inputs/input-book/README.md` — documents `priority.txt` on every folder, not just story folders.
+- `core-outputs/output-book/0-Title_Page/README.md` — corrects `render/web/`'s own description: it's an
+  independently-useful image variant, not itself the webpage deliverable; now embedded in
+  `web-book/render/pages/page-000-title-page.html` instead.
+- `agents/output-format-interviewer.md` — interview log and open questions updated with the correction.
+
+### Not done yet
+- A future story's webpage page needs real typeset prose content, not an embedded image — `SPEC.md`'s
+  new open question, not resolved here.
+- `web-book/` isn't published anywhere reachable yet — same "published, not rendered" gap as every other
+  variant.
+
+## 2026-09-07
+
+### Added
+- `core-outputs/output-book/0-Title_Page/src/generate_ai_accessible.py`, `render/ai-accessible/` — a
+  structured JSON description of the title page (layers, colors, text, layout) for AI/programmatic
+  consumption, sourced from `generate.py`'s own design constants.
+- `.../src/generate_human_accessible.py`, `render/human-accessible/` — a WCAG-1.1.1-style plain-language
+  long description, written for a screen reader.
+- `.../src/generate_interactive.py`, `render/interactive/` — a self-contained HTML page (embedded web
+  PNG, vanilla CSS/JS, no external requests): pannable by drag, zoomable by scroll/pinch, slow ambient
+  zoom animation. Deliberately stayed a single dependency-free file rather than a new web/JS output type,
+  since that stack hasn't been decided for the project generally.
+- `.../src/generate_puzzle.py`, `render/puzzle/` — a self-contained HTML tap-to-swap tile puzzle (4x5
+  grid, CSS background-position slicing of the mobile PNG, no server-side slicing or game framework).
+  The file itself is deterministic; the shuffle re-randomizes every page load, on purpose.
+- `.../src/generate_age_censored.py`, `render/age-censored/` — the actual age-censoring mechanism (a
+  list of regions to Gaussian-blur), not a demonstration on fabricated content — `CENSOR_REGIONS` is
+  empty for this piece on purpose, since nothing in it warrants censoring for any age group. A more
+  mature story input would populate the same list through the same script.
+
+### Changed
+- `core-outputs/output-book/0-Title_Page/README.md` — documents the complete format-variant set from The
+  Output Format Interviewer's 2026-09-04 list; only the separate "published, not rendered" gap remains.
+- `agents/output-format-interviewer.md` — interview log updated with the full build and the two judgment
+  calls made along the way (self-contained HTML instead of a new output type; censoring mechanism built
+  with nothing flagged rather than fabricated content).
+
+### Not done yet
+- The interactive and puzzle HTML files were checked structurally (valid output, no unresolved template
+  placeholders) but not opened in a live browser.
+- The "published, not just rendered" gap (`SPEC.md`'s "Publishing" section) — explicitly out of scope for
+  this pass, per the original request.
+
 ## 2026-09-06
 
 ### Added

@@ -55,13 +55,33 @@ Three questions were asked, against the already-completed title page print rende
 Interviewer's own round did for deliverable scope — building each variant is separate Exceptional Do-er
 work, not done inline here.
 
-**Update, same day:** The Exceptional Do-er then built the web variant — `render/print/` (existing
-render, moved into its own subfolder) and `render/web/` (new, `src/generate_web.py`, reusing
-`generate.py`'s composite and resampling it — see `core-outputs/output-book/0-Title_Page/README.md`) —
-followed by the mobile variant (`render/mobile/`, `src/generate_mobile.py`, same reuse approach, 750px
-wide at a 2x-equivalent density rather than just a smaller web image). Still not built: AI-accessibility,
-human-accessibility, animated/interactive, puzzle, and age-censored variants, plus the separate
-"published, not just rendered" gap.
+**Update:** The Exceptional Do-er built every variant from this round's list (2026-09-04 through
+2026-09-07) — see `core-outputs/output-book/0-Title_Page/README.md`'s "Format variants" section for the
+full set (print, web, mobile, AI-accessible JSON, human-accessible long description, an interactive
+pan/zoom HTML page, a tile-swap puzzle HTML page, and the age-censoring mechanism itself, with zero
+regions flagged for this piece). Two judgment calls worth flagging, not asked about upfront:
+
+- The animated/interactive and puzzle variants stayed self-contained single HTML files (embedded PNG,
+  vanilla CSS/JS, no external requests) rather than reaching for a real web/JS framework, since no
+  technology stack has been decided for the project generally — that's `SPEC.md`'s Fan-out territory (a
+  new output *type*), not this role's job. If a real interactive webpage output type gets scoped later,
+  these may get superseded by it rather than extended.
+- The age-censored variant builds the actual mechanism (a list of regions to blur) rather than
+  fabricating age-inappropriate content to demonstrate it on a children's-hope-themed title page — the
+  list is empty for this piece on purpose.
+
+Only the separate "published, not just rendered" gap (`SPEC.md`'s "Publishing" section) remains
+untouched — explicitly out of scope for this pass.
+
+**Correction, 2026-09-08:** the "web" answer from this round's list was wrong in kind, not just
+underspecified — a resized static image wasn't what "an output dedicated to normal website with regular
+web server" meant. It's actually the webpage output *type* (`SPEC.md`'s "Webpage output" section, a
+click-through directory of HTML pages spanning the whole book, `publish-output/web-book/` — moved there
+2026-09-09, `SPEC.md`'s "Publishing" section), not a format variant scoped to one asset. This resolves
+this doc's own "some items raised in this round's answer... read as output types" open question below —
+confirmed, at least for "web." The already-built `render/web/title-page-web.png` wasn't wasted work,
+though: it's now the embedded image inside the title page's actual book-page HTML
+(`publish-output/web-book/render/pages/page-000-title-page.html`).
 
 ## Activation
 
@@ -75,14 +95,17 @@ Conversational, same as every other role in this chain right now — no automati
   only "after the output interviewer" — whether whole-book output types (LaTeX, webpage, 3D model) also
   need a format/audience-variant pass, or that's out of scope for them, isn't decided.
 - Is the 2026-09-04 list of variants (AI accessibility, human accessibility, animated/interactive,
-  puzzle, web, age-censored, mobile) a universal checklist every output type gets run against, or decided
-  fresh per output type? See `SPEC.md`'s matching open question.
-- Some items raised in this round's answer (3D model, hacker source+servers, audio/TTS) read as
-  output *types* per `SPEC.md`'s Fan-out, not format variants of one type — is the line between "new
-  output type" and "format variant of an existing type" actually clear, or does it need its own
-  resolution? Tentative reading here: a *format variant* changes how the same conceptual piece is
+  puzzle, age-censored, mobile — "web" removed 2026-09-08, see "Correction" above) a universal checklist
+  every output type gets run against, or decided fresh per output type? See `SPEC.md`'s matching open
+  question.
+- Some items raised in this round's answer (3D model, hacker source+servers, audio/TTS, and — confirmed
+  2026-09-08 — "web") read as output *types* per `SPEC.md`'s Fan-out, not format variants of one type.
+  The line held up on its first real test: a *format variant* changes how the same conceptual piece is
   packaged for a consumer (accessibility, platform, censorship); a *type* changes the underlying
-  technology/medium (image vs. 3D scene vs. audio). Not yet tested against a real ambiguous case.
+  technology/medium (image vs. webpage vs. 3D scene vs. audio) — "web" needed a real output type because
+  a directory of click-through pages isn't a repackaging of the title page image, it's a different kind
+  of thing entirely. Worth applying this test to 3D model, hacker source+servers, and audio/TTS too
+  before assuming they're settled the same way.
 - The "published, not just rendered" gap this round surfaced is real but distinct from this role's core
   job — tracked as its own open question in `SPEC.md`'s "Publishing" section and
   `agents/exceptional-doer.md`, not resolved here.
