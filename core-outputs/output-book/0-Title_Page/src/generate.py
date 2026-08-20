@@ -25,8 +25,17 @@ no image-generation tool was available either.
 
 Usage: python3 generate.py
 Reads:  ../../../../core-inputs/input-book/0-Title_Page/source-milky-way.jpg
-Writes: ../render/title-page-print.png (archives the previous render
-        first -- see archive_existing_render())
+Writes: ../render/print/title-page-print.png (archives the previous render
+        first -- see archive_existing())
+
+build_composite() below is reused by generate_web.py (and any future
+format-variant script, per SPEC.md's "Format variants" section) so every
+variant resamples the *same* artwork rather than re-running the
+procedural crayon/wireframe generation at a different canvas size --
+stroke widths and font sizes below are tuned in absolute pixels against
+CANVAS_SIZE, so regenerating at a smaller size would throw off their
+proportions relative to each other. One composite, multiple output
+resolutions -- not one generator per resolution.
 """
 import math
 import random
@@ -45,8 +54,11 @@ CANVAS_SIZE = (int(5.5 * DPI), int(8.5 * DPI))  # (1650, 2550)
 SRC_DIR = Path(__file__).resolve().parent
 TITLE_PAGE_DIR = SRC_DIR.parent
 INPUT_DIR = TITLE_PAGE_DIR.parent.parent.parent / "core-inputs" / "input-book" / "0-Title_Page"
-RENDER_DIR = TITLE_PAGE_DIR / "render"
-ARCHIVE_DIR = RENDER_DIR / "ARCHIVE"
+RENDER_ROOT = TITLE_PAGE_DIR / "render"
+# Subfolder per format variant, per SPEC.md's "Format variants" section
+# (2026-09-04) -- mirrors render/ARCHIVE/'s existing per-version convention,
+# one level up: render/<format>/, each with its own ARCHIVE/.
+RENDER_DIR = RENDER_ROOT / "print"
 RENDER_NAME = "title-page-print.png"
 
 WIREFRAME_COLOR = (110, 225, 255)
@@ -287,24 +299,28 @@ def draw_title_and_author(canvas: Image.Image, title_layer, author_layer, gap: i
     canvas.alpha_composite(author_layer, (int(ax), int(ay)))
 
 
-def archive_existing_render() -> None:
-    """Per the 2026-08-19 versioning instruction: before writing a new
-    render, move whatever's currently there into ARCHIVE, versioned."""
-    current = RENDER_DIR / RENDER_NAME
+def archive_existing(render_dir: Path, filename: str) -> None:
+    """Per the 2026-08-19 versioning instruction, generalized 2026-09-04 so
+    every format variant gets its own versioned ARCHIVE/ under its own
+    render/<format>/ subfolder: before writing a new render, move whatever
+    is currently there into that subfolder's own ARCHIVE, versioned."""
+    current = render_dir / filename
     if not current.exists():
         return
-    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
-    existing = list(ARCHIVE_DIR.glob("title-page-print-v*.png"))
+    archive_dir = render_dir / "ARCHIVE"
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    stem, suffix = Path(filename).stem, Path(filename).suffix
+    existing = list(archive_dir.glob(f"{stem}-v*{suffix}"))
     next_version = len(existing) + 1
-    dest = ARCHIVE_DIR / f"title-page-print-v{next_version}.png"
+    dest = archive_dir / f"{stem}-v{next_version}{suffix}"
     current.rename(dest)
-    print(f"Archived previous render -> render/ARCHIVE/{dest.name}")
+    print(f"Archived previous render -> {dest.relative_to(RENDER_ROOT.parent)}")
 
 
-def main() -> None:
-    RENDER_DIR.mkdir(parents=True, exist_ok=True)
-    archive_existing_render()
-
+def build_composite() -> Image.Image:
+    """The full composed artwork at CANVAS_SIZE (print resolution) --
+    every layer, deterministic given RNG_SEED. Shared by every format
+    variant's script; see this module's docstring for why."""
     fitted = fitted_source_photo()
     center = galaxy_centroid(fitted)
 
@@ -317,6 +333,14 @@ def main() -> None:
     composed = apply_title_fade(composed, fade_center, radius=int(CANVAS_SIZE[0] * 0.32))
 
     draw_title_and_author(composed, title_layer, author_layer, gap, top, center[0])
+    return composed
+
+
+def main() -> None:
+    RENDER_DIR.mkdir(parents=True, exist_ok=True)
+    archive_existing(RENDER_DIR, RENDER_NAME)
+
+    composed = build_composite()
 
     out_path = RENDER_DIR / RENDER_NAME
     composed.convert("RGB").save(out_path, dpi=(DPI, DPI))

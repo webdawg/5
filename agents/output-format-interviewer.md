@@ -51,11 +51,15 @@ Three questions were asked, against the already-completed title page print rende
 3. **Where do variants live on disk?** Answered: subfolder per format under `render/` (e.g.
    `render/print/`, `render/web/`), mirroring `render/ARCHIVE/`'s existing subfolder convention.
 
-**Not yet done as of this round:** none of the listed variants (beyond the existing print render) have
-actually been built, and the print render itself hasn't been moved into a `render/print/` subfolder or
-reached a published location yet. This interview captured *what's needed*, same as The Output
+**Not yet done as of this round:** this interview captured *what's needed*, same as The Output
 Interviewer's own round did for deliverable scope — building each variant is separate Exceptional Do-er
 work, not done inline here.
+
+**Update, same day:** The Exceptional Do-er then built the web variant — `render/print/` (existing
+render, moved into its own subfolder) and `render/web/` (new, `src/generate_web.py`, reusing
+`generate.py`'s composite and resampling it — see `core-outputs/output-book/0-Title_Page/README.md`).
+Still not built: AI-accessibility, human-accessibility, animated/interactive, puzzle, age-censored, and
+mobile variants, plus the separate "published, not just rendered" gap.
 
 ## Activation
 

@@ -10,6 +10,28 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-09-05
+
+### Added
+- `core-outputs/output-book/0-Title_Page/src/generate_web.py` — the title page's web format variant
+  (`SPEC.md`'s "Format variants" section), built by The Exceptional Do-er per The Output Format
+  Interviewer's 2026-09-04 round. Reuses `generate.py`'s composite and resamples it to 1000px wide
+  rather than regenerating independently, to avoid visual drift between variants of the same piece.
+- `render/web/title-page-web.png` — the rendered web variant, 1000x1545.
+
+### Changed
+- `core-outputs/output-book/0-Title_Page/src/generate.py` — refactored: composition extracted into
+  `build_composite()` (shared with `generate_web.py`), archiving generalized into `archive_existing()`,
+  output path moved to `render/print/` (was `render/`), matching the new per-variant subfolder
+  convention.
+- `render/title-page-print.png` and `render/ARCHIVE/` moved to `render/print/title-page-print.png` and
+  `render/print/ARCHIVE/` (`git mv`, history preserved) to match.
+- `core-outputs/output-book/0-Title_Page/README.md` — documents both variants and what's still only
+  documented, not built (AI-accessibility, human-accessibility, animated/interactive, puzzle,
+  age-censored, mobile — plus the still-open "published, not rendered" gap).
+- `agents/output-format-interviewer.md` — interview log updated: web variant built, rest of the list
+  still open.
+
 ## 2026-09-04
 
 ### Added
