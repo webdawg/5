@@ -57,9 +57,11 @@ work, not done inline here.
 
 **Update, same day:** The Exceptional Do-er then built the web variant — `render/print/` (existing
 render, moved into its own subfolder) and `render/web/` (new, `src/generate_web.py`, reusing
-`generate.py`'s composite and resampling it — see `core-outputs/output-book/0-Title_Page/README.md`).
-Still not built: AI-accessibility, human-accessibility, animated/interactive, puzzle, age-censored, and
-mobile variants, plus the separate "published, not just rendered" gap.
+`generate.py`'s composite and resampling it — see `core-outputs/output-book/0-Title_Page/README.md`) —
+followed by the mobile variant (`render/mobile/`, `src/generate_mobile.py`, same reuse approach, 750px
+wide at a 2x-equivalent density rather than just a smaller web image). Still not built: AI-accessibility,
+human-accessibility, animated/interactive, puzzle, and age-censored variants, plus the separate
+"published, not just rendered" gap.
 
 ## Activation
 

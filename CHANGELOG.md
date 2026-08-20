@@ -10,6 +10,20 @@ actually needs one. Follows [Keep a Changelog](https://keepachangelog.com)'s spi
 
 Nothing pending.
 
+## 2026-09-06
+
+### Added
+- `core-outputs/output-book/0-Title_Page/src/generate_mobile.py` — the title page's mobile format
+  variant, same reuse approach as `generate_web.py` (resamples `generate.py`'s shared composite).
+  750x1159 — narrower than the web variant but at a 2x-equivalent pixel density (a common "mobile @2x"
+  asset-width convention), so it stays crisp at typical mobile device pixel ratios.
+- `render/mobile/title-page-mobile.png` — the rendered mobile variant.
+
+### Changed
+- `core-outputs/output-book/0-Title_Page/README.md`, `agents/output-format-interviewer.md` — document
+  the mobile variant; remaining undone list narrowed to AI-accessibility, human-accessibility,
+  animated/interactive, puzzle, age-censored, plus the "published, not rendered" gap.
+
 ## 2026-09-05
 
 ### Added

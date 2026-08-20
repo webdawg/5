@@ -25,8 +25,8 @@ Each format variant is its own script (per The Output Format Interviewer's 2026-
 but every variant reuses `generate.py`'s `build_composite()` rather than re-running the procedural
 generation at a different canvas size — the crayon/wireframe/font code draws in absolute pixel widths
 tuned against `CANVAS_SIZE`, so a fresh composite at a smaller size would visibly drift from the print
-one. `src/generate_web.py` builds the same composite and resamples it (Pillow `LANCZOS`) down to 1000px
-wide for on-page web display, instead.
+one. `src/generate_web.py` and `src/generate_mobile.py` both build the same composite and resample it
+(Pillow `LANCZOS`) down to their own target width instead.
 
 ## Format variants
 
@@ -34,14 +34,18 @@ wide for on-page web display, instead.
   print deliverable.
 - **`render/web/`** (`src/generate_web.py`) — 1000x1545, resampled from the same composite, for a
   standard web-hosted page (the "output dedicated to normal website with regular web server" answer).
+- **`render/mobile/`** (`src/generate_mobile.py`) — 750x1159, resampled narrower than the web variant
+  but at a 2x-equivalent pixel density (a common "mobile @2x" asset-width convention for a ~375px
+  logical viewport), so it stays crisp on typical mobile device pixel ratios rather than just being a
+  smaller web image.
 
 Still only documented, not built, from The Output Format Interviewer's full 2026-09-04 list: an
 AI-accessibility variant, a human-accessibility variant, an animated/interactive variant, a puzzle
-variant, an age-censored variant, and a mobile variant — plus the separate, still-open "published, not
-just rendered" gap (`SPEC.md`'s "Publishing" section) neither variant has reached yet.
+variant, and an age-censored variant — plus the separate, still-open "published, not just rendered" gap
+(`SPEC.md`'s "Publishing" section) none of the built variants have reached yet.
 
 ## Status
 
 In active iteration — under active review, being refined round by round against the rendered output
-(see `render/print/ARCHIVE/`, `render/web/ARCHIVE/` for prior versions and `design-brief.md`'s
-"Iteration log" for what changed and why at each round).
+(see `render/print/ARCHIVE/`, `render/web/ARCHIVE/`, `render/mobile/ARCHIVE/` for prior versions and
+`design-brief.md`'s "Iteration log" for what changed and why at each round).
