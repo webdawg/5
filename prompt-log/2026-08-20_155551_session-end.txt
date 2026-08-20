@@ -1,0 +1,59 @@
+Dump taken 2026-08-20 15:55:51, auto-captured on session end (session unknown-session). Covers all prompts submitted in that session.
+
+1. lets keep going - do you have a record of what we were working on last
+
+---
+
+2. are you talking about claude memory?
+
+---
+
+3. please review all the files in the llm prompt folder
+
+---
+
+4. okay - now that you have context - what is next, and are you going to save the context of this conversation in the future too?
+
+---
+
+5. so we need to work on the output interviewer - we did not talk about multiple formats here, and that is a problem, so we need to insert an output multiple formats interviewer before the doer and after the output interviewer - lets construct, and document, and spec, and intent that, and go through an interview, save it as an example, and get this done
+
+---
+
+6. commit and push
+
+---
+
+7. build the web format variant next
+
+---
+
+8. commit and push, next variant
+
+---
+
+9. do all of them and then stop
+
+---
+
+10. the web version is bad - we need to talk about this - we are going to put a bunch of html files in a dir, and users will click through like a normal book - update the spec on this, and fix this.
+
+---
+
+11. move web-book and the final things we are publishing to a new publish-output folder - we still use the other folders and structure as already speced - this publish-output is for FINAL work only
+
+---
+
+12. commit and push
+
+---
+
+13. keep going
+
+---
+
+14. commit and push
+
+---
+
+15. we have to exit - did you want to dump the prompts
